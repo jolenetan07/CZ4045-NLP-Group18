@@ -49,7 +49,7 @@ body {
   grid-template-areas:
     "sidebar header header header"
     "sidebar main main main";
-  height: 100vh;
+  height: 100%;
 }
 
 
@@ -75,12 +75,15 @@ body {
 
 #sidebar {
   grid-area: sidebar;
-  height: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 70vh; 
   background-color: #21232d;
   color: #9799ab;
-  overflow-y: auto;
+  /* overflow-y: auto;
   transition: all 0.5s;
-  -webkit-transition: all 0.5s;
+  -webkit-transition: all 0.5s; */
 }
 
 .sidebar-title {
@@ -105,6 +108,7 @@ body {
   padding: 0;
   margin-top: 15px;
   list-style-type: none;
+  
 }
 
 .sidebar-list-item {

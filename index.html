@@ -20,7 +20,6 @@
       <!-- Header -->
       <header class="header">
         <p class="font-weight-bold-header">Classification Visualization</p>
-
       </header>
       <!-- End Header -->
 
@@ -28,28 +27,35 @@
       <aside id="sidebar">
         <div class="sidebar-title">
           <div class="sidebar-brand">
-            <span class="material-icons-outlined">group</span> NLP Group 19
+            <span class="material-icons-outlined"">group</span> NLP Group 19
+            
           </div>
-          <span class="material-icons-outlined">close</span>
+          
         </div>
 
         <ul class="sidebar-list">
           <li class="sidebar-list-item">
+            <a href="#overview-section"</a>
             <span class="material-icons-outlined">dashboard</span> Overview
           </li>
           <li class="sidebar-list-item">
+            <a href="#model1-section"</a>
             <span class="material-icons-outlined">looks_one</span> Model 1
           </li>
           <li class="sidebar-list-item">
+            <a href="#model2-section"</a>
             <span class="material-icons-outlined">looks_two</span> Model 2
           </li>
           <li class="sidebar-list-item"> 
+            <a href="#model3-section"</a>
             <span class="material-icons-outlined">looks_3</span> Model 3
           </li>
           <li class="sidebar-list-item">
+            <a href="#model4-section"</a>
             <span class="material-icons-outlined">looks_4</span> Model 4
           </li>
           <li class="sidebar-list-item">
+            <a href="#model5-section"</a>
             <span class="material-icons-outlined">looks_5</span> Model 5
           </li>
         </ul>
@@ -58,7 +64,9 @@
 
       <!-- Main -->
       <main class="main-container">
-        <div class="main-title">
+        <!-- Overview Stuff -->
+
+        <div class="main-title" id="overview-section">
           <p class="font-weight-bold">Overview</p>
         </div>
 
@@ -77,6 +85,9 @@
               <div class="table-cell">
               <p>Recall</p>
               </div>
+              <!-- <div class="table-cell last-cell">
+                  <p>YouTube Link</p>
+              </div>  -->
           </div>
   
   
@@ -163,9 +174,11 @@
         <br>
         <br>
         <br>
+        <br>
+        <br>
 
         <!-- Model 1 Stuff -->
-        <div class="main-title">
+        <div class="main-title" id="model1-section">
           <p class="font-weight-bold">Model 1</p>
         </div>
 
@@ -201,19 +214,20 @@
             <p class="chart-title">Model 1 Bar Plot</p>
             <div id="bar-chart-1"></div>
           </div>
-
-
-
         </div>
+      </section>
 
-        <!-- Space between sections -->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+      <!-- Space between sections -->
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
-        <!-- Model 2 Stuff -->
+      <!-- Model 2 Stuff -->
+      <section class="model2-section" id="model2-section">
         <div class="main-title">
           <p class="font-weight-bold">Model 2</p>
         </div>
@@ -259,9 +273,11 @@
         <br>
         <br>
         <br>
+        <br>
+        <br>
 
         <!-- Model 3 Stuff -->
-        <div class="main-title">
+        <div class="main-title" id="model3-section">
           <p class="font-weight-bold">Model 3</p>
         </div>
 
@@ -306,9 +322,11 @@
         <br>
         <br>
         <br>
+        <br>
+        <br>
 
         <!-- Model 4 Stuff -->
-        <div class="main-title">
+        <div class="main-title" id="model4-section">
           <p class="font-weight-bold">Model 4</p>
         </div>
 
@@ -353,46 +371,49 @@
         <br>
         <br>
         <br>
+        <br>
+        <br>
 
         <!-- Model 5 Stuff -->
-        <div class="main-title">
-          <p class="font-weight-bold">Model 5</p>
+      <div class="main-title" id="model5-section">
+        <p class="font-weight-bold">Model 5</p>
+      </div>
+
+      
+      <div class="main-cards">
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Positive Tweet Count</p>
+            <span class="material-icons-outlined text-green">thumb_up_alt</span>
+          </div>
+          <span class="text-primary font-weight-bold">400</span>
         </div>
 
-        
-        <div class="main-cards">
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">Positive Tweet Count</p>
-              <span class="material-icons-outlined text-green">thumb_up_alt</span>
-            </div>
-            <span class="text-primary font-weight-bold">400</span>
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Negative Tweet Count</p>
+            <span class="material-icons-outlined text-red">thumb_down_alt</span>
           </div>
-
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">Negative Tweet Count</p>
-              <span class="material-icons-outlined text-red">thumb_down_alt</span>
-            </div>
-            <span class="text-primary font-weight-bold">600</span>
-          </div>
-
+          <span class="text-primary font-weight-bold">600</span>
         </div>
 
+      </div>
 
-        <div class="charts">
 
-          <div class="charts-card">
-            <p class="chart-title">Model 5 Pie Chart</p>
-            <div id="pie-chart-5"></div>
-          </div>
+      <div class="charts">
 
-          <div class="charts-card">
-            <p class="chart-title">Model 5 Bar Plot</p>
-            <div id="bar-chart-5"></div>
-          </div>
-
+        <div class="charts-card">
+          <p class="chart-title">Model 5 Pie Chart</p>
+          <div id="pie-chart-5"></div>
         </div>
+
+        <div class="charts-card">
+          <p class="chart-title">Model 5 Bar Plot</p>
+          <div id="bar-chart-5"></div>
+        </div>
+
+      </div>
+
 
       </main>
       <!-- End Main -->
