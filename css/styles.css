@@ -80,8 +80,8 @@ body {
   top: 0;
   height: 70vh; 
   background-color: #21232d;
-  color: #9799ab;
-  /* overflow-y: auto;
+  color: #ffffff;
+  /*overflow-y: auto;
   transition: all 0.5s;
   -webkit-transition: all 0.5s; */
 }
@@ -115,21 +115,13 @@ body {
   padding: 20px 20px 20px 20px;
 }
 
+.sidebar-list-item > a {
+  color: #9799ab;
+}
+
 .sidebar-list-item:hover {
   background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
-}
-
-.sidebar-responsive {
-  display: inline !important;
-  position: absolute;
-  /*
-    the z-index of the ApexCharts is 11
-    we want the z-index of the sidebar higher so that
-    the charts are not showing over the sidebar 
-    on small screens
-  */
-  z-index: 12 !important;
 }
 
 
