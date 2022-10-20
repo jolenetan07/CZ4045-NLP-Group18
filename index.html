@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Classification Visualization</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <p class="font-weight-bold-header">Classification Visualization</p>
+        <!-- <div class="menu-icon" onclick="openSidebar()">
+          <span class="material-icons-outlined">menu</span>
+        </div>
+        <div class="header-left">
+          <span class="material-icons-outlined">search</span>
+        </div>
+        <div class="header-right">
+          <span class="material-icons-outlined">notifications</span>
+          <span class="material-icons-outlined">email</span>
+          <span class="material-icons-outlined">account_circle</span>
+        </div> -->
+      </header>
+      <!-- End Header -->
+
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-title">
+          <!-- <div class="sidebar-brand">
+            <span class="material-icons-outlined">inventory</span> Bob's Inventory
+          </div> -->
+          <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+        </div>
+
+        <ul class="sidebar-list">
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">dashboard</span> Overview
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">looks_one</span> Model 1
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">looks_two</span> Model 2
+          </li>
+          <li class="sidebar-list-item"> 
+            <span class="material-icons-outlined">looks_3</span> Model 3
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">looks_4</span> Model 4
+          </li>
+          <li class="sidebar-list-item">
+            <span class="material-icons-outlined">looks_5</span> Model 5
+          </li>
+        </ul>
+      </aside>
+      <!-- End Sidebar -->
+
+      <!-- Main -->
+      <main class="main-container">
+        <div class="main-title">
+          <p class="font-weight-bold">Overview</p>
+        </div>
+
+        <!-- Table Stuff -->
+        <div class="table-box">
+          <div class="table-row table-head">
+              <div class="table-cell first-cell">
+                  <p>Model</p>
+              </div>
+              <div class="table-cell">
+                  <p>Accuracy</p>
+              </div>
+              <div class="table-cell">
+                <p>Precision</p>
+              </div>
+              <div class="table-cell">
+              <p>Recall</p>
+              </div>
+              <!-- <div class="table-cell last-cell">
+                  <p>YouTube Link</p>
+              </div>  -->
+          </div>
+  
+  
+          <div class="table-row">
+              <div class="table-cell first-cell">
+                  <p>Model 1</p>
+              </div>
+              <div class="table-cell">
+                  <p>0.80</p>
+              </div>
+              <div class="table-cell">
+                <p>0.70</p>
+              </div>
+              <div class="table-cell">
+                <p>0.60</p>
+              </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Model 2</p>
+            </div>
+            <div class="table-cell">
+                <p>0.80</p>
+            </div>
+            <div class="table-cell">
+              <p>0.70</p>
+            </div>
+            <div class="table-cell">
+              <p>0.60</p>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Model 3</p>
+            </div>
+            <div class="table-cell">
+                <p>0.80</p>
+            </div>
+            <div class="table-cell">
+              <p>0.70</p>
+            </div>
+            <div class="table-cell">
+              <p>0.60</p>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Model 4</p>
+            </div>
+            <div class="table-cell">
+                <p>0.80</p>
+            </div>
+            <div class="table-cell">
+              <p>0.70</p>
+            </div>
+            <div class="table-cell">
+              <p>0.60</p>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Model 5</p>
+            </div>
+            <div class="table-cell">
+                <p>0.80</p>
+            </div>
+            <div class="table-cell">
+              <p>0.70</p>
+            </div>
+            <div class="table-cell">
+              <p>0.60</p>
+            </div>
+          </div>
+        
+        </div>
+
+      <!-- Space between sections -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Model 1 Stuff -->
+        <div class="main-title">
+          <p class="font-weight-bold">Model 1</p>
+        </div>
+
+
+        <div class="main-cards">
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Positive Tweet Count</p>
+              <span class="material-icons-outlined text-green">thumb_up_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">400</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Negative Tweet Count</p>
+              <span class="material-icons-outlined text-red">thumb_down_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">600</span>
+          </div>
+
+        </div>
+
+
+        <div class="charts">
+
+          <div class="charts-card">
+            <p class="chart-title">Model 2 Pie Chart</p>
+            <div id="pie-chart-1"></div>
+          </div>
+
+          <div class="charts-card">
+            <p class="chart-title">Model 1 Bar Plot</p>
+            <div id="bar-chart-1"></div>
+          </div>
+
+
+
+        </div>
+
+        <!-- Space between sections -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Model 2 Stuff -->
+        <div class="main-title">
+          <p class="font-weight-bold">Model 2</p>
+        </div>
+
+        
+        <div class="main-cards">
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Positive Tweet Count</p>
+              <span class="material-icons-outlined text-green">thumb_up_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">400</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Negative Tweet Count</p>
+              <span class="material-icons-outlined text-red">thumb_down_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">600</span>
+          </div>
+
+        </div>
+
+
+        <div class="charts">
+
+          <div class="charts-card">
+            <p class="chart-title">Model 2 Pie Chart</p>
+            <div id="pie-chart-2"></div>
+          </div>
+
+          <div class="charts-card">
+            <p class="chart-title">Model 2 Pie Chart</p>
+            <div id="bar-chart-2"></div>
+          </div>
+
+        </div>
+
+        <!-- Space between sections -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Model 3 Stuff -->
+        <div class="main-title">
+          <p class="font-weight-bold">Model 3</p>
+        </div>
+
+        
+        <div class="main-cards">
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Positive Tweet Count</p>
+              <span class="material-icons-outlined text-green">thumb_up_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">400</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Negative Tweet Count</p>
+              <span class="material-icons-outlined text-red">thumb_down_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">600</span>
+          </div>
+
+        </div>
+
+
+        <div class="charts">
+
+          <div class="charts-card">
+            <p class="chart-title">Model 3 Pie Chart</p>
+            <div id="pie-chart-3"></div>
+          </div>
+
+          <div class="charts-card">
+            <p class="chart-title">Model 3 Bar Chart</p>
+            <div id="bar-chart-3"></div>
+          </div>
+
+        </div>
+
+                <!-- Space between sections -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Model 4 Stuff -->
+        <div class="main-title">
+          <p class="font-weight-bold">Model 4</p>
+        </div>
+
+        
+        <div class="main-cards">
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Positive Tweet Count</p>
+              <span class="material-icons-outlined text-green">thumb_up_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">400</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Negative Tweet Count</p>
+              <span class="material-icons-outlined text-red">thumb_down_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">600</span>
+          </div>
+
+        </div>
+
+
+        <div class="charts">
+
+          <div class="charts-card">
+            <p class="chart-title">Model 4 Pie Chart</p>
+            <div id="pie-chart-4"></div>
+          </div>
+
+          <div class="charts-card">
+            <p class="chart-title">Model 4 Bar Plot</p>
+            <div id="bar-chart-4"></div>
+          </div>
+
+        </div>
+
+        <!-- Space between sections -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Model 5 Stuff -->
+        <div class="main-title">
+          <p class="font-weight-bold">Model 5</p>
+        </div>
+
+        
+        <div class="main-cards">
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Positive Tweet Count</p>
+              <span class="material-icons-outlined text-green">thumb_up_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">400</span>
+          </div>
+
+          <div class="card">
+            <div class="card-inner">
+              <p class="text-primary">Negative Tweet Count</p>
+              <span class="material-icons-outlined text-red">thumb_down_alt</span>
+            </div>
+            <span class="text-primary font-weight-bold">600</span>
+          </div>
+
+        </div>
+
+
+        <div class="charts">
+
+          <div class="charts-card">
+            <p class="chart-title">Model 5 Pie Chart</p>
+            <div id="pie-chart-5"></div>
+          </div>
+
+          <div class="charts-card">
+            <p class="chart-title">Model 5 Bar Plot</p>
+            <div id="bar-chart-5"></div>
+          </div>
+
+        </div>
+
+      </main>
+      <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
