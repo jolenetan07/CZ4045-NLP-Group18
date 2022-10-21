@@ -146,7 +146,7 @@ body {
 
 .main-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   margin-bottom: 20px; 
   margin-left: 20px;
@@ -165,7 +165,7 @@ body {
 }
 
 .card:first-child {
-  border-left: 7px solid #246dec;
+  border-left: 7px solid #367952;
 }
 
 .card:nth-child(2) {
@@ -173,11 +173,11 @@ body {
 }
 
 .card:nth-child(3) {
-  border-left: 7px solid #367952;
+  border-left: 7px solid #cc3c43;
 }
 
 .card:nth-child(4) {
-  border-left: 7px solid #cc3c43;
+  border-left: 7px solid #246dec;
 }
 
 .card > span {

@@ -4,7 +4,7 @@
 // Model 1 Bar
 var barChart1Options = {
   series: [{
-    data: [400, 600]
+    data: [400, 300, 600]
   }],
   chart: {
     type: 'bar',
@@ -15,6 +15,7 @@ var barChart1Options = {
   },
   colors: [
     "#367952",
+    "#f5b74f",
     "#cc3c43",
   ],
   plotOptions: {
@@ -32,7 +33,7 @@ var barChart1Options = {
     show: false
   },
   xaxis: {
-    categories: ["Positive", "Negative"],
+    categories: ["Positive", "Neutral", "Negative"],
   },
   yaxis: {
     title: {
@@ -47,15 +48,20 @@ barChart1.render();
 
 // Model 1 Pie
 var pieChart1Options = {
-  series: [400, 600],
+  series: [400, 300, 600],
   chart: {
   width: 400,
   offsetX: 25,
   offsetY: 40,
   type: 'pie',
 },
-colors: ["#0000FF", "#FF0000"],
-labels: ['Positive', 'Negative'],
+// colors: ["#0000FF", "#FF0000"],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
+labels: ['Positive', 'Neutral', 'Negative'],
 responsive: [{
   breakpoint: 480,
   options: {
@@ -78,7 +84,7 @@ pieChart1.render();
 // Model 2 Bar
 var barChart2Options = {
   series: [{
-    data: [400, 600]
+    data: [400, 300, 600]
   }],
   chart: {
     type: 'bar',
@@ -87,10 +93,11 @@ var barChart2Options = {
       show: false
     },
   },
-  colors: [
-    "#367952",
-    "#cc3c43",
-  ],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
   plotOptions: {
     bar: {
       distributed: true,
@@ -106,7 +113,7 @@ var barChart2Options = {
     show: false
   },
   xaxis: {
-    categories: ["Positive", "Negative"],
+    categories: ["Positive", "Neutral", "Negative"],
   },
   yaxis: {
     title: {
@@ -121,15 +128,19 @@ barChart2.render();
 
 // Model 2 Pie
 var pieChart2Options = {
-  series: [400, 600],
+  series: [400, 300, 600],
   chart: {
   width: 400,
   offsetX: 25,
   offsetY: 40,
   type: 'pie',
 },
-colors: ["#0000FF", "#FF0000"],
-labels: ['Positive', 'Negative'],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
+labels: ['Positive', 'Neutral', 'Negative'],
 responsive: [{
   breakpoint: 480,
   options: {
@@ -151,7 +162,7 @@ pieChart2.render();
 // Model 3 Bar
 var barChart3Options = {
   series: [{
-    data: [400, 600]
+    data: [400, 300, 600]
   }],
   chart: {
     type: 'bar',
@@ -160,10 +171,11 @@ var barChart3Options = {
       show: false
     },
   },
-  colors: [
-    "#367952",
-    "#cc3c43",
-  ],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
   plotOptions: {
     bar: {
       distributed: true,
@@ -179,7 +191,7 @@ var barChart3Options = {
     show: false
   },
   xaxis: {
-    categories: ["Positive", "Negative"],
+    categories: ["Positive", "Neutral", "Negative"],
   },
   yaxis: {
     title: {
@@ -194,15 +206,19 @@ barChart3.render();
 
 // Model 3 Pie
 var pieChart3Options = {
-  series: [400, 600],
+  series: [400, 300, 600],
   chart: {
   width: 400,
   offsetX: 25,
   offsetY: 40,
   type: 'pie',
 },
-colors: ["#0000FF", "#FF0000"],
-labels: ['Positive', 'Negative'],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
+labels: ['Positive', 'Neutral', 'Negative'],
 responsive: [{
   breakpoint: 480,
   options: {
@@ -224,7 +240,7 @@ pieChart3.render();
 // Model 4 Bar
 var barChart4Options = {
   series: [{
-    data: [400, 600]
+    data: [400, 300, 600]
   }],
   chart: {
     type: 'bar',
@@ -233,10 +249,11 @@ var barChart4Options = {
       show: false
     },
   },
-  colors: [
-    "#367952",
-    "#cc3c43",
-  ],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
   plotOptions: {
     bar: {
       distributed: true,
@@ -252,7 +269,7 @@ var barChart4Options = {
     show: false
   },
   xaxis: {
-    categories: ["Positive", "Negative"],
+    categories: ["Positive", "Neutral", "Negative"],
   },
   yaxis: {
     title: {
@@ -267,15 +284,19 @@ barChart4.render();
 
 // Model 4 Pie
 var pieChart4Options = {
-  series: [400, 600],
+  series: [400, 300, 600],
   chart: {
   width: 400,
   offsetX: 25,
   offsetY: 40,
   type: 'pie',
 },
-colors: ["#0000FF", "#FF0000"],
-labels: ['Positive', 'Negative'],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
+labels: ['Positive', 'Neutral', 'Negative'],
 responsive: [{
   breakpoint: 480,
   options: {
@@ -297,7 +318,7 @@ pieChart4.render();
 // Model 5 Bar
 var barChart5Options = {
   series: [{
-    data: [400, 600]
+    data: [400, 300, 600]
   }],
   chart: {
     type: 'bar',
@@ -306,10 +327,11 @@ var barChart5Options = {
       show: false
     },
   },
-  colors: [
-    "#367952",
-    "#cc3c43",
-  ],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
   plotOptions: {
     bar: {
       distributed: true,
@@ -325,7 +347,7 @@ var barChart5Options = {
     show: false
   },
   xaxis: {
-    categories: ["Positive", "Negative"],
+    categories: ["Positive", "Neutral", "Negative"],
   },
   yaxis: {
     title: {
@@ -340,15 +362,19 @@ barChart5.render();
 
 // Model 5 Pie
 var pieChart5Options = {
-  series: [400, 600],
+  series: [400, 300, 600],
   chart: {
   width: 400,
   offsetX: 25,
   offsetY: 40,
   type: 'pie',
 },
-colors: ["#0000FF", "#FF0000"],
-labels: ['Positive', 'Negative'],
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
+labels: ['Positive', 'Neutral', 'Negative'],
 responsive: [{
   breakpoint: 480,
   options: {
