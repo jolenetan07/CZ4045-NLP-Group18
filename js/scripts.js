@@ -1,10 +1,10 @@
 // ---------- CHARTS ----------
 
-// ----- Model 1 -----
+// ----- VADER -----
 // Model 1 Bar
 var barChart1Options = {
   series: [{
-    data: [400, 300, 600]
+    data: [7657, 4172, 5822]
   }],
   chart: {
     type: 'bar',
@@ -48,7 +48,7 @@ barChart1.render();
 
 // Model 1 Pie
 var pieChart1Options = {
-  series: [400, 300, 600],
+  series: [7657, 4172, 5822],
   chart: {
   width: 400,
   offsetX: 25,

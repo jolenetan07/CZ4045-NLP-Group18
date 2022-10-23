@@ -70,7 +70,7 @@
           <p class="font-weight-bold">Overview</p>
         </div>
 
-        <!-- Table Stuff -->
+        <!-- Overview Table Stuff -->
         <div class="table-box">
           <div class="table-row table-head">
               <div class="table-cell first-cell">
@@ -80,14 +80,14 @@
                   <p>Accuracy</p>
               </div>
               <div class="table-cell">
-                <p>Precision</p>
+                <p># Positive</p>
               </div>
               <div class="table-cell">
-              <p>Recall</p>
+              <p># Neutral</p>
               </div>
-              <!-- <div class="table-cell last-cell">
-                  <p>YouTube Link</p>
-              </div>  -->
+              <div class="table-cell last-cell">
+                  <p># Negative</p>
+              </div> 
           </div>
   
   
@@ -96,13 +96,16 @@
                   <p>VADER</p>
               </div>
               <div class="table-cell">
-                  <p>0.80</p>
+                  <p>0.44</p>
               </div>
               <div class="table-cell">
-                <p>0.70</p>
+                <p>7657</p>
               </div>
               <div class="table-cell">
-                <p>0.60</p>
+                <p>4172</p>
+              </div>
+              <div class="table-cell last-cell">
+                <p>5822</p>
               </div>
           </div>
 
@@ -117,6 +120,9 @@
               <p>0.70</p>
             </div>
             <div class="table-cell">
+              <p>0.60</p>
+            </div>
+            <div class="table-cell last-cell">
               <p>0.60</p>
             </div>
           </div>
@@ -134,6 +140,9 @@
             <div class="table-cell">
               <p>0.60</p>
             </div>
+            <div class="table-cell last-cell">
+              <p>0.60</p>
+            </div>
           </div>
 
           <div class="table-row">
@@ -149,6 +158,9 @@
             <div class="table-cell">
               <p>0.60</p>
             </div>
+            <div class="table-cell last-cell">
+              <p>0.60</p>
+            </div>
           </div>
 
           <div class="table-row">
@@ -162,6 +174,9 @@
               <p>0.70</p>
             </div>
             <div class="table-cell">
+              <p>0.60</p>
+            </div>
+            <div class="table-cell last-cell">
               <p>0.60</p>
             </div>
           </div>
@@ -182,6 +197,70 @@
           <p class="font-weight-bold">VADER</p>
         </div>
 
+        <!-- Model 1 Table Stuff -->
+        <div class="table-box">
+          <div class="table-row table-head">
+              <div class="table-cell first-cell">
+                  <!-- <p>Model</p> -->
+              </div>
+              <div class="table-cell">
+                  <p>Precision</p>
+              </div>
+              <div class="table-cell">
+                <p># Recall</p>
+              </div>
+              <div class="table-cell">
+              <p># F1-Score</p>
+              </div>
+          </div>
+  
+  
+          <div class="table-row">
+              <div class="table-cell first-cell">
+                  <p>Positive</p>
+              </div>
+              <div class="table-cell">
+                  <p>0.39</p>
+              </div>
+              <div class="table-cell">
+                <p>0.54</p>
+              </div>
+              <div class="table-cell">
+                <p>0.45</p>
+              </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Neutral</p>
+            </div>
+            <div class="table-cell">
+                <p>0.40</p>
+            </div>
+            <div class="table-cell">
+              <p>0.35</p>
+            </div>
+            <div class="table-cell">
+              <p>0.37</p>
+            </div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Negative</p>
+            </div>
+            <div class="table-cell">
+                <p>0.55</p>
+            </div>
+            <div class="table-cell">
+              <p>0.43</p>
+            </div>
+            <div class="table-cell">
+              <p>0.48</p>
+            </div>
+          </div>
+        </div>
+
 
         <div class="main-cards">
           <div class="card">
@@ -189,7 +268,7 @@
               <p class="text-primary">Positive Tweet Count</p>
               <span class="material-icons-outlined text-green">sentiment_satisfied</span>
             </div>
-            <span class="text-primary font-weight-bold">400</span>
+            <span class="text-primary font-weight-bold">7657</span>
           </div>
 
           <div class="card">
@@ -197,7 +276,7 @@
               <p class="text-primary">Neutral Tweet Count</p>
               <span class="material-icons-outlined text-orange">sentiment_neutral</span>
             </div>
-            <span class="text-primary font-weight-bold">300</span>
+            <span class="text-primary font-weight-bold">4172</span>
           </div>
 
           <div class="card">
@@ -205,7 +284,7 @@
               <p class="text-primary">Negative Tweet Count</p>
               <span class="material-icons-outlined text-red">sentiment_dissatisfied</span>
             </div>
-            <span class="text-primary font-weight-bold">600</span>
+            <span class="text-primary font-weight-bold">5822</span>
           </div>
 
         </div>
