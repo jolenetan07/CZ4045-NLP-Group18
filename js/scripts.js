@@ -80,11 +80,11 @@ pieChart1.render();
 
 
 
-// ----- Model 2 -----
+// ----- SVM -----
 // Model 2 Bar
 var barChart2Options = {
   series: [{
-    data: [400, 300, 600]
+    data: [713, 14889, 2049]
   }],
   chart: {
     type: 'bar',
@@ -128,7 +128,7 @@ barChart2.render();
 
 // Model 2 Pie
 var pieChart2Options = {
-  series: [400, 300, 600],
+  series: [713, 14889, 2049],
   chart: {
   width: 400,
   offsetX: 25,
