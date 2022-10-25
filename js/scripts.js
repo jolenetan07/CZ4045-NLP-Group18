@@ -84,7 +84,7 @@ pieChart1.render();
 // Model 2 Bar
 var barChart2Options = {
   series: [{
-    data: [713, 14889, 2049]
+    data: [4746, 3532, 9373]
   }],
   chart: {
     type: 'bar',
@@ -128,7 +128,7 @@ barChart2.render();
 
 // Model 2 Pie
 var pieChart2Options = {
-  series: [713, 14889, 2049],
+  series: [4746, 3532, 9373],
   chart: {
   width: 400,
   offsetX: 25,
