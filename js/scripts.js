@@ -1,10 +1,10 @@
 // ---------- CHARTS ----------
 
-// ----- VADER -----
+// ----- vader -----
 // Model 1 Bar
 var barChart1Options = {
   series: [{
-    data: [7657, 4172, 5822]
+    data: [7652, 4163, 5816],
   }],
   chart: {
     type: 'bar',
@@ -48,7 +48,7 @@ barChart1.render();
 
 // Model 1 Pie
 var pieChart1Options = {
-  series: [7657, 4172, 5822],
+  series: [7652, 4163, 5816],
   chart: {
   width: 400,
   offsetX: 25,
@@ -80,11 +80,11 @@ pieChart1.render();
 
 
 
-// ----- SVM -----
+// ----- textblob -----
 // Model 2 Bar
 var barChart2Options = {
   series: [{
-    data: [4746, 3532, 9373]
+    data: [7888, 6028, 3715]
   }],
   chart: {
     type: 'bar',
@@ -128,7 +128,7 @@ barChart2.render();
 
 // Model 2 Pie
 var pieChart2Options = {
-  series: [4746, 3532, 9373],
+  series: [7888, 6028, 3715],
   chart: {
   width: 400,
   offsetX: 25,
@@ -158,11 +158,11 @@ var pieChart2 = new ApexCharts(document.querySelector("#pie-chart-2"), pieChart2
 pieChart2.render();
 
 
-// ----- Model 3 -----
+// ----- linearsvc -----
 // Model 3 Bar
 var barChart3Options = {
   series: [{
-    data: [400, 300, 600]
+    data: [5088, 4042, 8501]
   }],
   chart: {
     type: 'bar',
@@ -206,7 +206,7 @@ barChart3.render();
 
 // Model 3 Pie
 var pieChart3Options = {
-  series: [400, 300, 600],
+  series: [5088, 4042, 8501],
   chart: {
   width: 400,
   offsetX: 25,
@@ -236,11 +236,11 @@ var pieChart3 = new ApexCharts(document.querySelector("#pie-chart-3"), pieChart3
 pieChart3.render();
 
 
-// ----- Model 4 -----
+// ----- sgdc -----
 // Model 4 Bar
 var barChart4Options = {
   series: [{
-    data: [400, 300, 600]
+    data: [5403, 4340, 7888]
   }],
   chart: {
     type: 'bar',
@@ -284,7 +284,7 @@ barChart4.render();
 
 // Model 4 Pie
 var pieChart4Options = {
-  series: [400, 300, 600],
+  series: [5403, 4340, 7888],
   chart: {
   width: 400,
   offsetX: 25,
