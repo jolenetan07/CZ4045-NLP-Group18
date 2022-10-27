@@ -40,23 +40,27 @@
           </li>
           <li class="sidebar-list-item">
             <a href="#model1-section"</a>
-            <span class="material-icons-outlined">looks_one</span> Model 1
+            <span class="material-icons-outlined">looks_one</span> VADER
           </li>
           <li class="sidebar-list-item">
             <a href="#model2-section"</a>
-            <span class="material-icons-outlined">looks_two</span> Model 2
+            <span class="material-icons-outlined">looks_two</span> TextBlob
           </li>
           <li class="sidebar-list-item"> 
             <a href="#model3-section"</a>
-            <span class="material-icons-outlined">looks_3</span> Model 3
+            <span class="material-icons-outlined">looks_3</span> LinearSVC
           </li>
           <li class="sidebar-list-item">
             <a href="#model4-section"</a>
-            <span class="material-icons-outlined">looks_4</span> Model 4
+            <span class="material-icons-outlined">looks_4</span> SGDC
           </li>
           <li class="sidebar-list-item">
             <a href="#model5-section"</a>
-            <span class="material-icons-outlined">looks_5</span> Model 5
+            <span class="material-icons-outlined">looks_5</span> XGBoost
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#model6-section"</a>
+            <span class="material-icons-outlined">looks_6</span> ComplimentNB
           </li>
         </ul>
       </aside>
@@ -191,16 +195,16 @@
                 <p>ComplimentNB</p>
             </div>
             <div class="table-cell">
-                <p>0.80</p>
+                <p>0.83</p>
             </div>
             <div class="table-cell">
-              <p>0.70</p>
+              <p>5078</p>
             </div>
             <div class="table-cell">
-              <p>0.60</p>
+              <p>4198</p>
             </div>
             <div class="table-cell last-cell">
-              <p>0.60</p>
+              <p>8355</p>
             </div>
           </div>
         
@@ -700,9 +704,73 @@
         <br>
         <br>
 
-        <!-- Model 5 Stuff -->
+        <!-- Model 5 - xgboost Stuff -->
       <div class="main-title" id="model5-section">
-        <p class="font-weight-bold">Model 5</p>
+        <p class="font-weight-bold">XGBoost</p>
+      </div>
+
+      <!-- Model 5 Table Stuff -->
+      <div class="table-box">
+        <div class="table-row table-head">
+            <div class="table-cell first-cell">
+                <!-- <p>Model</p> -->
+            </div>
+            <div class="table-cell">
+                <p>Precision</p>
+            </div>
+            <div class="table-cell">
+              <p>Recall</p>
+            </div>
+            <div class="table-cell">
+            <p>F1-Score</p>
+            </div>
+        </div>
+
+
+        <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Positive</p>
+            </div>
+            <div class="table-cell">
+                <p>0.79</p>
+            </div>
+            <div class="table-cell">
+              <p>0.80</p>
+            </div>
+            <div class="table-cell">
+              <p>0.80</p>
+            </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Neutral</p>
+          </div>
+          <div class="table-cell">
+              <p>0.85</p>
+          </div>
+          <div class="table-cell">
+            <p>0.81</p>
+          </div>
+          <div class="table-cell">
+            <p>0.83</p>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Negative</p>
+          </div>
+          <div class="table-cell">
+              <p>0.84</p>
+          </div>
+          <div class="table-cell">
+            <p>0.86</p>
+          </div>
+          <div class="table-cell">
+            <p>0.85</p>
+          </div>
+        </div>
       </div>
 
       
@@ -737,13 +805,134 @@
       <div class="charts">
 
         <div class="charts-card">
-          <p class="chart-title">Model 5 Pie Chart</p>
+          <p class="chart-title">XGBoost Pie Chart</p>
           <div id="pie-chart-5"></div>
         </div>
 
         <div class="charts-card">
-          <p class="chart-title">Model 5 Bar Plot</p>
+          <p class="chart-title">XGBoost Bar Plot</p>
           <div id="bar-chart-5"></div>
+        </div>
+
+      </div>
+
+      <!-- Space between sections -->
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+              
+      <!-- Model 6 - complimentnb Stuff -->
+      <div class="main-title" id="model6-section">
+        <p class="font-weight-bold">Compliment Naive Bayes</p>
+      </div>
+              
+      <!-- Model 6 Table Stuff -->
+      <div class="table-box">
+        <div class="table-row table-head">
+            <div class="table-cell first-cell">
+                <!-- <p>Model</p> -->
+            </div>
+            <div class="table-cell">
+                <p>Precision</p>
+            </div>
+            <div class="table-cell">
+              <p>Recall</p>
+            </div>
+            <div class="table-cell">
+            <p>F1-Score</p>
+            </div>
+        </div>
+
+
+        <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Positive</p>
+            </div>
+            <div class="table-cell">
+                <p>0.79</p>
+            </div>
+            <div class="table-cell">
+              <p>0.80</p>
+            </div>
+            <div class="table-cell">
+              <p>0.80</p>
+            </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Neutral</p>
+          </div>
+          <div class="table-cell">
+              <p>0.85</p>
+          </div>
+          <div class="table-cell">
+            <p>0.81</p>
+          </div>
+          <div class="table-cell">
+            <p>0.83</p>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Negative</p>
+          </div>
+          <div class="table-cell">
+              <p>0.84</p>
+          </div>
+          <div class="table-cell">
+            <p>0.86</p>
+          </div>
+          <div class="table-cell">
+            <p>0.85</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="main-cards">
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Positive Tweet Count</p>
+            <span class="material-icons-outlined text-green">sentiment_satisfied</span>
+          </div>
+          <span class="text-primary font-weight-bold">5078</span>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Neutral Tweet Count</p>
+            <span class="material-icons-outlined text-orange">sentiment_neutral</span>
+          </div>
+          <span class="text-primary font-weight-bold">4198</span>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Negative Tweet Count</p>
+            <span class="material-icons-outlined text-red">sentiment_dissatisfied</span>
+          </div>
+          <span class="text-primary font-weight-bold">8355</span>
+        </div>
+
+      </div>
+
+
+      <div class="charts">
+
+        <div class="charts-card">
+          <p class="chart-title">ComplimentNB Pie Chart</p>
+          <div id="pie-chart-6"></div>
+        </div>
+
+        <div class="charts-card">
+          <p class="chart-title">ComplimentNB Bar Plot</p>
+          <div id="bar-chart-6"></div>
         </div>
 
       </div>

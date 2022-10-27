@@ -314,7 +314,7 @@ var pieChart4 = new ApexCharts(document.querySelector("#pie-chart-4"), pieChart4
 pieChart4.render();
 
 
-// ----- Model 5 -----
+// ----- xgboost -----
 // Model 5 Bar
 var barChart5Options = {
   series: [{
@@ -390,3 +390,81 @@ responsive: [{
 
 var pieChart5 = new ApexCharts(document.querySelector("#pie-chart-5"), pieChart5Options);
 pieChart5.render();
+
+
+// ----- complimentnb -----
+// Model 6 Bar
+var barChart6Options = {
+  series: [{
+    data: [5078, 4198, 8355]
+  }],
+  chart: {
+    type: 'bar',
+    height: 350,
+    toolbar: {
+      show: false
+    },
+  },
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
+  plotOptions: {
+    bar: {
+      distributed: true,
+      borderRadius: 4,
+      horizontal: false,
+      columnWidth: '40%',
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  legend: {
+    show: false
+  },
+  xaxis: {
+    categories: ["Positive", "Neutral", "Negative"],
+  },
+  yaxis: {
+    title: {
+      text: "Count"
+    }
+  }
+};
+
+var barChart6 = new ApexCharts(document.querySelector("#bar-chart-6"), barChart6Options);
+barChart6.render();
+
+
+// Model 6 Pie
+var pieChart6Options = {
+  series: [5078, 4198, 8355],
+  chart: {
+  width: 400,
+  offsetX: 25,
+  offsetY: 40,
+  type: 'pie',
+},
+colors: [
+  "#367952",
+  "#f5b74f",
+  "#cc3c43",
+],
+labels: ['Positive', 'Neutral', 'Negative'],
+responsive: [{
+  breakpoint: 480,
+  options: {
+    chart: {
+      width: 200
+    },
+    legend: {
+      position: 'bottom'
+    }
+  }
+}]
+};
+
+var pieChart6 = new ApexCharts(document.querySelector("#pie-chart-6"), pieChart6Options);
+pieChart6.render();
