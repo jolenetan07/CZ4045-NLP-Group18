@@ -14,7 +14,7 @@
     - manually labeled 10% of tweets from biden_tweets_clean.csv (5% from top, 5% from bottom)
     - to be used as training and/or evaluation set 
     - subjectivity - 0: neutral, 1: opinionated
-    - polarity - 0: negative, 1: positive, 2: negative
+    - polarity - 0: negative, 1: positive, 2: neutral
 
 * biden_tweets_processed.csv (run preprocess_data.ipynb)
     - final cleaning of data
