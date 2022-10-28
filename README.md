@@ -113,12 +113,12 @@
 
 
 
-## Classification UI
-* overview 
+## Classification Dashboard (UI)
+* overview section
     - accuracy
     - sentiment counts 
 
-* model specific
+* model specific sections
     - classification report (precision, recall, f1-score)
     - sentiment counts
     - sentiment counts pie chart
