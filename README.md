@@ -32,6 +32,11 @@
 |||| cnb_results_full.csv
 |||| cnb_results_test_labeled.csv
 
+| ui
+|||| index.html
+|||| styles.css
+|||| scripts.js
+
 | innovations
 |||| tune-xgboost
 |||||||| tune_xgb_classifier.ipynb
