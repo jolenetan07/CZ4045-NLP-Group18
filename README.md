@@ -1,5 +1,77 @@
 # CZ4045 NLP Group18 Sentiment Analysis Project
 
+## File Structure
+| datasets
+|||| preprocess_data.ipynb
+|||| biden_tweets_raw.csv
+|||| biden_tweets_processed.csv
+|||| biden_tweets_labeled.csv
+|||| biden_tweets_labeled_processed.csv
+|||| biden_tweets_labeled_train.csv
+|||| biden_tweets_labeled_test.csv
+
+| classifiers
+|||| vader_classifier.ipynb
+|||| textblob_classifier.ipynb
+|||| lsvc_classifier.ipynb
+|||| sgdc_classifier.ipynb
+|||| xgb_classifier.ipynb
+|||| cnb_classifier.ipynb
+
+| results
+|||| vader_results_full.csv
+|||| vader_results_test_labeled.csv
+|||| textblob_results_full.csv
+|||| textblob_results_test_labeled.csv
+|||| lsvc_results_full.csv
+|||| lsvc_results_test_labeled.csv
+|||| sgdc_results_full.csv
+|||| sgdc_results_test_labeled.csv
+|||| xgb_results_full.csv
+|||| xgb_results_test_labeled.csv
+|||| cnb_results_full.csv
+|||| cnb_results_test_labeled.csv
+
+| innovations
+|||| tune-xgboost
+|||||||| tune_xgb_classifier.ipynb
+
+|||| choose-bayes
+|||||||| choose_naivebayes_classifier.ipynb
+
+|||| bigrams
+|||||||| classifiers
+|||||||||||||||| bigram_lsvc_classifier.ipynb
+|||||||||||||||| bigram_sgdc_classifier.ipynb
+|||||||||||||||| bigram_xgb_classifier.ipynb
+|||||||||||||||| bigram_cnb_classifier.ipynb
+|||||||| results
+||||||||||||||| bigram_lsvc_results_full.csv
+||||||||||||||| bigram_lsvc_results_test_labeled.csv
+||||||||||||||| bigram_sgdc_results_full.csv
+||||||||||||||| bigram_sgdc_results_test_labeled.csv
+||||||||||||||| bigram_xgb_results_full.csv
+||||||||||||||| bigram_xgb_results_test_labeled.csv
+||||||||||||||| bigram_cnb_results_full.csv
+||||||||||||||| bigram_cnb_results_test_labeled.csv
+
+|||| trigrams
+|||||||| classifiers
+|||||||||||||||| trigram_lsvc_classifier.ipynb
+|||||||||||||||| trigram_sgdc_classifier.ipynb
+|||||||||||||||| trigram_xgb_classifier.ipynb
+|||||||||||||||| trigram_cnb_classifier.ipynb
+|||||||| results
+||||||||||||||| trigram_lsvc_results_full.csv
+||||||||||||||| trigram_lsvc_results_test_labeled.csv
+||||||||||||||| trigram_sgdc_results_full.csv
+||||||||||||||| trigram_sgdc_results_test_labeled.csv
+||||||||||||||| trigram_xgb_results_full.csv
+||||||||||||||| trigram_xgb_results_test_labeled.csv
+||||||||||||||| trigram_cnb_results_full.csv
+||||||||||||||| trigram_cnb_results_test_labeled.csv
+
+
 ## Data Collection
 *** TODO :: upload snscrape python script ***
 
@@ -34,13 +106,15 @@
     - complement naive bayes
 
 
+
+
 ## Classification UI
 * overview 
     - accuracy
     - sentiment counts 
 
 * model specific
-    - classification report
+    - classification report (precision, recall, f1-score)
     - sentiment counts
     - sentiment counts pie chart
     - sentiment counts bar plot
