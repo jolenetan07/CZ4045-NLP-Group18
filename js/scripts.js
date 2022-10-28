@@ -318,7 +318,7 @@ pieChart4.render();
 // Model 5 Bar
 var barChart5Options = {
   series: [{
-    data: [400, 300, 600]
+    data: [5018, 3667, 8946]
   }],
   chart: {
     type: 'bar',
@@ -362,7 +362,7 @@ barChart5.render();
 
 // Model 5 Pie
 var pieChart5Options = {
-  series: [400, 300, 600],
+  series: [5018, 3667, 8946],
   chart: {
   width: 400,
   offsetX: 25,
