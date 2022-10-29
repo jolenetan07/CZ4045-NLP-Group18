@@ -74,7 +74,7 @@
           <p class="font-weight-bold">Overview</p>
         </div>
 
-        <!-- Overview Table Stuff -->
+        <!-- Overview Metrics Table Stuff -->
         <div class="table-box">
           <div class="table-row table-head">
               <div class="table-cell first-cell">
@@ -82,6 +82,142 @@
               </div>
               <div class="table-cell">
                   <p>Accuracy</p>
+              </div>
+              <div class="table-cell">
+                <p>Precision</p>
+              </div>
+              <div class="table-cell">
+              <p>Recall</p>
+              </div>
+              <div class="table-cell last-cell">
+                  <p>F1-Score</p>
+              </div> 
+          </div>
+  
+          <!-- vader row -->
+          <div class="table-row">
+              <div class="table-cell first-cell">
+                  <p>VADER</p>
+              </div>
+              <div class="table-cell">
+                  <p>0.44</p>
+              </div>
+              <div class="table-cell">
+                <p>0.49</p>
+              </div>
+              <div class="table-cell">
+                <p>0.44</p>
+              </div>
+              <div class="table-cell last-cell">
+                <p>0.44</p>
+              </div>
+          </div>
+
+          <!-- textblob row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>TextBlob</p>
+            </div>
+            <div class="table-cell">
+                <p>0.39</p>
+            </div>
+            <div class="table-cell">
+              <p>0.47</p>
+            </div>
+            <div class="table-cell">
+              <p>0.39</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.39</p>
+            </div>
+          </div>
+
+          <!-- linearsvc row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>LinearSVC</p>
+            </div>
+            <div class="table-cell">
+                <p>0.82</p>
+            </div>
+            <div class="table-cell">
+              <p>0.82</p>
+            </div>
+            <div class="table-cell">
+              <p>0.82</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.81</p>
+            </div>
+          </div>
+
+          <!-- sgdc row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>SGDC</p>
+            </div>
+            <div class="table-cell">
+                <p>0.79</p>
+            </div>
+            <div class="table-cell">
+              <p>0.79</p>
+            </div>
+            <div class="table-cell">
+              <p>0.79</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.79</p>
+            </div>
+          </div>
+
+          <!-- xgboost row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>XGBoost</p>
+            </div>
+            <div class="table-cell">
+                <p>0.73</p>
+            </div>
+            <div class="table-cell">
+              <p>0.73</p>
+            </div>
+            <div class="table-cell">
+              <p>0.73</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.73</p>
+            </div>
+          </div>
+
+          <!-- complimentnb row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Naive Bayes</p>
+            </div>
+            <div class="table-cell">
+                <p>0.83</p>
+            </div>
+            <div class="table-cell">
+              <p>0.83</p>
+            </div>
+            <div class="table-cell">
+              <p>0.83</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.83</p>
+            </div>
+          </div>
+        
+        </div>
+
+        <br>
+        <br>
+        <br>
+      <!-- Overview Counts Table Stuff -->
+        <div class="table-box">
+          <div class="table-row table-head">
+              <div class="table-cell first-cell">
+                  <p>Model</p>
               </div>
               <div class="table-cell">
                 <p># Positive</p>
@@ -100,9 +236,6 @@
                   <p>VADER</p>
               </div>
               <div class="table-cell">
-                  <p>0.44</p>
-              </div>
-              <div class="table-cell">
                 <p>7652</p>
               </div>
               <div class="table-cell">
@@ -117,9 +250,6 @@
           <div class="table-row">
             <div class="table-cell first-cell">
                 <p>TextBlob</p>
-            </div>
-            <div class="table-cell">
-                <p>0.38</p>
             </div>
             <div class="table-cell">
               <p>7888</p>
@@ -138,9 +268,6 @@
                 <p>LinearSVC</p>
             </div>
             <div class="table-cell">
-                <p>0.81</p>
-            </div>
-            <div class="table-cell">
               <p>5088</p>
             </div>
             <div class="table-cell">
@@ -155,9 +282,6 @@
           <div class="table-row">
             <div class="table-cell first-cell">
                 <p>SGDC</p>
-            </div>
-            <div class="table-cell">
-                <p>0.79</p>
             </div>
             <div class="table-cell">
               <p>5403</p>
@@ -176,9 +300,6 @@
                 <p>XGBoost</p>
             </div>
             <div class="table-cell">
-                <p>0.72</p>
-            </div>
-            <div class="table-cell">
               <p>5018</p>
             </div>
             <div class="table-cell">
@@ -193,9 +314,6 @@
           <div class="table-row">
             <div class="table-cell first-cell">
                 <p>Naive Bayes</p>
-            </div>
-            <div class="table-cell">
-                <p>0.83</p>
             </div>
             <div class="table-cell">
               <p>5078</p>
