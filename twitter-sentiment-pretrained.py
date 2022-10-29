@@ -1,6 +1,8 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from scipy.special import softmax
 
+import pandas as pd
+
 
 tweet = "Well, I didn't vote for Biden nor Trump, 1 of them was going to win. 🤷🏻‍♀️If it bothers you that I like a less toxic tone... sorry... not sorry. 😎Have a good night. 👌"
 
@@ -36,3 +38,10 @@ scores = softmax(output[0][0].detach().numpy())
 print(output)
 
 # print(encoded_tweet)
+
+
+
+def load_unlabeled_data(path):
+     df = pd.read_csv(path, sep=',', header=None)
+
+

@@ -18,3 +18,10 @@ class textDataset(Dataset):
         input_data = self.install_data.iloc[idx, 1]
         label = self.install_data.iloc[idx, 0]
         return label, input_data
+
+
+
+
+
+
+
