@@ -78,7 +78,7 @@
 
 
 ## Data Collection
-*** TODO :: upload snscrape python script ***
+* 'crawl_data.ipynb' : python script to crawl tweet text data using snscrape
 
 
 ## Data Preprocessing
@@ -111,15 +111,14 @@
     - complement naive bayes
 
 
-
-
 ## Classification Dashboard (UI)
 * overview section
     - accuracy
+    - weighted average precision, recall, f1-score
     - sentiment counts 
 
 * model specific sections
-    - classification report (precision, recall, f1-score)
+    - precision, recall, f1-score for each sentiment
     - sentiment counts
     - sentiment counts pie chart
     - sentiment counts bar plot
