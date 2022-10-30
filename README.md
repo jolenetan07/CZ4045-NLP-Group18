@@ -18,20 +18,19 @@
 |||| sgdc_classifier.ipynb
 |||| xgb_classifier.ipynb
 |||| cnb_classifier.ipynb
-
-| results
-|||| vader_results_full.csv
-|||| vader_results_test_labeled.csv
-|||| textblob_results_full.csv
-|||| textblob_results_test_labeled.csv
-|||| lsvc_results_full.csv
-|||| lsvc_results_test_labeled.csv
-|||| sgdc_results_full.csv
-|||| sgdc_results_test_labeled.csv
-|||| xgb_results_full.csv
-|||| xgb_results_test_labeled.csv
-|||| cnb_results_full.csv
-|||| cnb_results_test_labeled.csv
+|||| results
+|||||||| vader_results_full.csv
+|||||||| vader_results_test_labeled.csv
+|||||||| textblob_results_full.csv
+|||||||| textblob_results_test_labeled.csv
+|||||||| lsvc_results_full.csv
+|||||||| lsvc_results_test_labeled.csv
+|||||||| sgdc_results_full.csv
+|||||||| sgdc_results_test_labeled.csv
+|||||||| xgb_results_full.csv
+|||||||| xgb_results_test_labeled.csv
+|||||||| cnb_results_full.csv
+|||||||| cnb_results_test_labeled.csv
 
 | ui
 |||| index.html
@@ -51,15 +50,15 @@
 |||||||||||||||| bigram_sgdc_classifier.ipynb
 |||||||||||||||| bigram_xgb_classifier.ipynb
 |||||||||||||||| bigram_cnb_classifier.ipynb
-|||||||| results
-||||||||||||||| bigram_lsvc_results_full.csv
-||||||||||||||| bigram_lsvc_results_test_labeled.csv
-||||||||||||||| bigram_sgdc_results_full.csv
-||||||||||||||| bigram_sgdc_results_test_labeled.csv
-||||||||||||||| bigram_xgb_results_full.csv
-||||||||||||||| bigram_xgb_results_test_labeled.csv
-||||||||||||||| bigram_cnb_results_full.csv
-||||||||||||||| bigram_cnb_results_test_labeled.csv
+|||||||||||||||| results
+|||||||||||||||||||| bigram_lsvc_results_full.csv
+|||||||||||||||||||| bigram_lsvc_results_test_labeled.csv
+|||||||||||||||||||| bigram_sgdc_results_full.csv
+|||||||||||||||||||| bigram_sgdc_results_test_labeled.csv
+|||||||||||||||||||| bigram_xgb_results_full.csv
+|||||||||||||||||||| bigram_xgb_results_test_labeled.csv
+|||||||||||||||||||| bigram_cnb_results_full.csv
+|||||||||||||||||||| bigram_cnb_results_test_labeled.csv
 
 |||| trigrams
 |||||||| classifiers
@@ -67,26 +66,29 @@
 |||||||||||||||| trigram_sgdc_classifier.ipynb
 |||||||||||||||| trigram_xgb_classifier.ipynb
 |||||||||||||||| trigram_cnb_classifier.ipynb
-|||||||| results
-||||||||||||||| trigram_lsvc_results_full.csv
-||||||||||||||| trigram_lsvc_results_test_labeled.csv
-||||||||||||||| trigram_sgdc_results_full.csv
-||||||||||||||| trigram_sgdc_results_test_labeled.csv
-||||||||||||||| trigram_xgb_results_full.csv
-||||||||||||||| trigram_xgb_results_test_labeled.csv
-||||||||||||||| trigram_cnb_results_full.csv
-||||||||||||||| trigram_cnb_results_test_labeled.csv
+|||||||||||||||| results
+|||||||||||||||||||| trigram_lsvc_results_full.csv
+|||||||||||||||||||| trigram_lsvc_results_test_labeled.csv
+|||||||||||||||||||| trigram_sgdc_results_full.csv
+|||||||||||||||||||| trigram_sgdc_results_test_labeled.csv
+|||||||||||||||||||| trigram_xgb_results_full.csv
+|||||||||||||||||||| trigram_xgb_results_test_labeled.csv
+|||||||||||||||||||| trigram_cnb_results_full.csv
+|||||||||||||||||||| trigram_cnb_results_test_labeled.csv
 
 
-## Data Collection
+## Data Collection 
+*** datasets folder ***
 * 'crawl_data.ipynb' : python script to crawl tweet text data using snscrape
 
 
 ## Data Preprocessing
-* 'preprocess_data.ipynb' : python script to clean and preprocess data using various techniques & perform exploratory data analysis on dataset (both full dataset and labeled dataset included)
+*** datasets folder ***
+* 'preprocess_data.ipynb' : python script to clean and preprocess data using various techniques & perform exploratory data analysis on both full and labeled datasets 
 
 
 ## Dataset
+*** datasets folder ***
 * 'biden_tweets_raw.csv' : tweet data crawled using snscrape 
 
 * 'biden_tweets_processed.csv' : clean tweet data and append preprocessed tweet text data 
@@ -101,32 +103,83 @@
 
 
 ## Sentiment Analysis (Classification)
-* unsupervised models
-    - vadersentiments
-    - textblob
+*** classifiers folder ***
+### vadersentiments
+* 'vader_classifier.ipynb' : python script for sentiment analysis with vader classifier
 
-* supervised models
-    - linear support vector 
-    - stochastic gradient descent 
-    - xgboost
-    - complement naive bayes
+### textblob
+* 'textblob_classifier.ipynb' : python script for sentiment analysis with textblob classifier
+
+### linear support vector 
+* 'lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier
+
+### stochastic gradient descent 
+* 'sgdc_classifier.ipynb' : python script for sentiment analysis with SGDC classifier
+
+### xgboost
+* 'xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier
+
+### complement naive bayes
+* 'cnb_classifier.ipynb' : python script for sentiment analysis with ComplementNB classifier
+
+*** results folder ***
+* '<model>_results_full.csv : append predicted polarity by <model> classifier to full dataset
+* '<model>_results_test_labeled.csv : append predicted polarity by <model> classifier to labeled test dataset
 
 
 ## Classification Dashboard (UI)
-* overview section
-    - accuracy
-    - weighted average precision, recall, f1-score
-    - sentiment counts 
-
-* model specific sections
-    - precision, recall, f1-score for each sentiment
-    - sentiment counts
-    - sentiment counts pie chart
-    - sentiment counts bar plot
+*** ui folder ***
+* 'index.html'
+* 'styles.css'
+* 'script.js'
 
 
 ## Innovations
-* xgboost hyperparameters tuning
-* choosing best variation of naive bayes
-* bigram and trigram on supervised models 
+*** innovations folder ***
+### xgboost hyperparameters tuning
+*** tune-xgboost folder ***
+* 'tune_xgb_classifier.ipynb' : python script to find best hyperparameters for sentiment analysis with XGBoost classifier
+
+### choosing best variation of naive bayes
+*** choose-naivebayes folder ***
+* 'choose_naivebayes_classifier.ipynb' : python script to find best variation of naive bayes classifier for sentiment analysis 
+
+### bigram on supervised models 
+*** bigrams -> classifier folder ***
+#### linear support vector 
+* 'bigram_lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier with bi-gram
+
+#### stochastic gradient descent 
+* 'bigram_sgdc_classifier.ipynb' : python script for sentiment analysis with SGDC classifier with bi-gram
+
+#### xgboost
+* 'bigram_xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier with bi-gram
+
+#### complement naive bayes
+* 'bigram_cnb_classifier.ipynb' : python script for sentiment analysis with ComplementNB classifier with bi-gram
+
+
+*** results folder ***
+* 'bigram_<model>_results_full.csv : append predicted polarity by <model> classifier with bi-gram to full dataset
+* 'bigram_<model>_results_test_labeled.csv : append predicted polarity by <model> classifier wwith bi-gram to labeled test dataset
+
+### trigram on supervised models
+*** trigrams -> classifier folder ***
+#### linear support vector 
+* 'trigram_lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier with tri-gram
+
+#### stochastic gradient descent 
+* 'trigram_sgdc_classifier.ipynb' : python script for sentiment analysis with SGDC classifier with tri-gram
+
+#### xgboost
+* 'trigram_xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier with tri-gram
+
+#### complement naive bayes
+* 'trigram_cnb_classifier.ipynb' : python script for sentiment analysis with ComplementNB classifier with tri-gram
+
+*** results folder ***
+* 'trigram_<model>_results_full.csv : append predicted polarity by <model> classifier with tri-gram to full dataset
+* 'trigram_<model>_results_test_labeled.csv : append predicted polarity by <model> classifier wwith tri-gram to labeled test dataset
+
+
 
