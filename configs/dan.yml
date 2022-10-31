@@ -1,39 +1,43 @@
 # ->->->->-> Primary <-<-<-<-<-
-exp_name: "temp"
+exp_name: "DAN"
 result_dir: "./trained_models"
-num_classes: 2
-init_type: "kaiming_normal"
+#num_classes: 1
+
 
 
 # ->->->->-> Model <-<-<-<-<-
-arch: "dan"
-embed_dim: 300
-hidden_dim: 256
-dropout: 0.2
+arch: "DAN"
+vocab_size: 5002
+output_dim: 2
+embed_dim: 50
+hidden_dim: 128
+dropout: 0.1
 
 
 # ->->->->-> Train <-<-<-<-<-
-epochs: 100
+epochs: 15
 optimizer: "sgd"
-lr: 0.1
+lr: 0.01
 lr_schedule: "cosine"
 wd: 0.0001
 momentum: 0.9
 
 #warmup
-warmup_epochs: 0
-warmup_lr: 0.1
+warmup_epochs: 10
+warmup_lr: 0.0001
 
 
 # ->->->->-> Dataset <-<-<-<-<-
-dataset: CIFAR10
-batch_size: 128
-test_batch_size: 128
-data_dir: "./dataset"
-data_fraction: 1.0
+dataset: "manually_labeled_tweets"
+batch_size: 16
+test_batch_size: 16
+
+#data_dir: "./dataset"
+#data_fraction: 1.0
 
 
 # ->->->->-> Misc <-<-<-<-<-
 gpu: "0"
-seed: 1234
-print_freq: 100
+no_cuda: "False"
+seed: 1108
+print_freq: 16

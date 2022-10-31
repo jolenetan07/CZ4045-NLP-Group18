@@ -27,11 +27,9 @@ class DAN(nn.Module):
         self.embed.weight.data.copy_(embed_weight)
         self.embed.weight.requires_grad = False
 
-    def forward(self, batch):
-        text = batch.text
-        label = batch.label
-        x = self.embed(text)
-        x = x.mean(dim=0)
+    def forward(self, x):
+        x = self.embed(x)
+        x = x.mean(dim=1)
         x = self.dropout1(x)
         x = self.bn1(x)
         x = self.fc1(x)
