@@ -312,7 +312,7 @@ body {
   width: 80%;
   margin: 10px auto;
   font-family: "Montserrat", sans-serif;
-  background: transparent;
+  background: #fff;
   padding: 12px 0;
   color: #555;
   font-size: 13px;
@@ -332,7 +332,7 @@ body {
   width: 20%;
   text-align: center;
   padding: 4px 0;
-  border-right: 1px solid #d6d4d4;
+  border-right: 3px solid #d6d4d4;
   vertical-align: middle;
 }
 .first-cell{
