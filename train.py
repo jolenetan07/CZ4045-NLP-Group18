@@ -7,20 +7,22 @@ import numpy as np
 import os
 from pathlib import Path
 
-
 import models
 from args import parse_args
 from trainer import train
-from utils.logging import load_config
-from utils.schedules import get_optimizer
+from utils.logging import load_config, save_checkpoint
+from utils.schedules import get_optimizer, get_lr_policy
+from utils.eval import val
+from utils.models import prepare_model
 
+import data
 
 
 def create_checkpoint_dir(args):
     """
     create folder for storing checkpoints and tensorboard logs
     """
-    result_main_dir = os.path.join(Path(args.result_dir), args.exp_name, args.exp_mode)
+    result_main_dir = os.path.join(Path(args.result_dir), args.exp_name)
     if os.path.exists(result_main_dir):
         n = len(next(os.walk(result_main_dir))[-2])  # prev experiments with same name
         result_sub_dir = os.path.join(
@@ -68,6 +70,16 @@ def get_device(args):
     """
     use_cuda = not args.no_cuda and torch.cuda.is_available()
     gpu_list = [int(i) for i in args.gpu.strip().split(",")]
+
+    # if not using cuda, use cpu or metal-gpu
+    # this part is to detect if there are any metal device
+    # available for acceleration (for macos)
+    # you can delete it if causing any issue
+    if not use_cuda and hasattr(torch.backends, "mps"):
+        if torch.backends.mps.is_available():
+            print("Using MPS")
+            return torch.device("mps")
+
     return torch.device(f"cuda:{gpu_list[0]}" if use_cuda else "cpu")
 
 
@@ -108,26 +120,55 @@ def main():
 
     # obtain model
     model = get_model(args)
+    # if checkpoint is given for transfer learning
+    # load the weight and freeze it, and replace the
+    # old fully connected layer with a new one
+    prepare_model(model, args)
+    model.to(device)
 
-    # TODO: get data loaders
-    # the data loading logic should be implemented in data.py and returns train_loader, val_loader and test_loader
-    train_loader = None
-    val_loader = None
-    test_loader = None
+    # the data loading logic should be implemented in ./data and returns train_loader, val_loader and test_loader
+    get_data_loaders = data.__dict__[args.dataset]
+    train_loader, val_loader, test_loader = get_data_loaders(args.batch_size)
 
-    # Autograd, config optimizer and loss function
-    criterion = torch.nn.CrossEntropyLoss()
-    optimizer = get_optimizer(args, model)
+    # Config Loss function and optimizers
+    criterion = torch.nn.CrossEntropyLoss()  # Todo: using BCELoss for model with one output
+    # optimizer is by args.optimizer (--optimizer), support sgd, adam, rmsprop
+    optimizer = get_optimizer(model, args)
+    # adjust the learning rate
+    lr_policy = get_lr_policy(args.lr_schedule)(optimizer, args)
 
+    # Model training iterations start here
+    best_val_acc = 0
+    for epoch in range(args.epochs + args.warmup_epochs):
+        lr_policy(epoch)  # adjust learning rate
 
-    # TODO: train model
-    train(model, device, train_loader,  )
+        train(model, device, train_loader, criterion, optimizer, epoch, args, writer)
 
+        # do model validation after each training epoch
+        val_acc = val(model, device, val_loader, criterion, args, writer, epoch=epoch)
 
-    # TODO: evaluate model
+        is_best = val_acc > best_val_acc
 
-    pass
+        if (is_best):
+            best_val_acc = val_acc
+
+        training_state = {
+            "epoch": epoch + 1,
+            "arch": args.arch,
+            "state_dict": model.state_dict(),
+            "best_prec1": best_val_acc,
+            "optimizer": optimizer.state_dict(),
+
+        }
+
+        # only save the checkpoint of current  epoch  and checkpoint having the best validation accuracy
+        save_checkpoint(training_state, is_best, os.path.join(result_sub_dir, "checkpoint"))
+        print(f"Epoch {epoch}, val_acc: {val_acc}, best_val_acc: {best_val_acc}")
+
+    # Test model
+    test_acc = val(model, device, test_loader, criterion, args, writer, epoch="test")
+    print(f"Training finished, test_acc: {test_acc}")
 
 
 if __name__ == "__main__":
-    pass
+    main()

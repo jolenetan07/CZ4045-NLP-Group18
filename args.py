@@ -57,7 +57,7 @@ def parse_args():
     parser.add_argument(
         "--dataset",
         type=str,
-        choices=("",),
+        # choices=("",),
         help="Dataset for training and eval"
     )
 
@@ -77,16 +77,16 @@ def parse_args():
         help="input batch size for testing (default: 128)",
     )
 
-    parser.add_argument(
-        "--data-dir", type=str, default="./dataset", help="path to datasets"
-    )
+    # parser.add_argument(
+    #     "--data-dir", type=str, default="./dataset", help="path to datasets"
+    # )
 
-    parser.add_argument(
-        "--data-fraction",
-        type=float,
-        default=1.0,
-        help="Fraction of images used from training set",
-    )
+    # parser.add_argument(
+    #     "--data-fraction",
+    #     type=float,
+    #     default=1.0,
+    #     help="Fraction of images used from training set",
+    # )
 
     parser.add_argument(
         "--epochs", type=int, default=100, metavar="N", help="number of epochs to train"
@@ -114,24 +114,24 @@ def parse_args():
         "--warmup-lr", type=float, default=0.1, help="warmup learning rate"
     )
 
-    # Evaluate
-    parser.add_argument(
-        "--evaluate", action="store_true", default=False, help="Evaluate model"
-    )
+    # # Evaluate
+    # parser.add_argument(
+    #     "--evaluate", action="store_true", default=False, help="Evaluate model"
+    # )
 
-    # Restart
-    parser.add_argument(
-        "--start-epoch",
-        type=int,
-        default=0,
-        help="manual start epoch (useful in restarts)",
-    )
-    parser.add_argument(
-        "--resume",
-        type=str,
-        default="",
-        help="path to latest checkpoint (default:None)",
-    )
+    # # Restart
+    # parser.add_argument(
+    #     "--start-epoch",
+    #     type=int,
+    #     default=0,
+    #     help="manual start epoch (useful in restarts)",
+    # )
+    # parser.add_argument(
+    #     "--resume",
+    #     type=str,
+    #     default="",
+    #     help="path to latest checkpoint (default:None)",
+    # )
 
     # Additional
     parser.add_argument(
@@ -148,11 +148,32 @@ def parse_args():
         help="Number of batches to wait before printing training logs",
     )
 
-    parser.add_argument(
-        "--schedule_length",
-        type=int,
-        default=0,
-        help="Number of epochs to schedule the training epsilon.",
-    )
+    parser.add_argument("--vocab-size",
+                        type=int,
+                        default=5000,
+                        help="Vocabulary size (input dimension of embedding layer)")
+
+    # transfer learning
+    parser.add_argument("--checkpoint",
+                        type=str,
+                        help="Load model check point from the given path")
+
+    parser.add_argument("--target-output-dim",
+                        type=int,
+                        help="Output dimension of source model, used for loading checkpoint",
+                        default=3)
+
+    parser.add_argument("--freeze-source",
+                        action="store_true",
+                        help="Freeze source model",
+                        default=True)
+
+
+    # parser.add_argument(
+    #     "--schedule_length",
+    #     type=int,
+    #     default=0,
+    #     help="Number of epochs to schedule the training epsilon.",
+    # )
 
     return parser.parse_args()

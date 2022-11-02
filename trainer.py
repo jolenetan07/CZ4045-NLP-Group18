@@ -6,6 +6,7 @@ import torchvision
 from torch.utils.tensorboard import SummaryWriter
 from utils.logging import AverageMeter, ProgressMeter
 from utils.logging import accuracy
+from utils.eval import val
 
 
 def train(
@@ -17,16 +18,16 @@ def train(
         epoch: int,
         args,
         writer: SummaryWriter):
-    print(" ->->->->->->->->->-> One epoch with Natural training <-<-<-<-<-<-<-<-<-<-")
+    print(" ->->->->->->->->->-> ONE EPOCH TRAINING <-<-<-<-<-<-<-<-<-<-")
 
     batch_time = AverageMeter("Time", ":6.3f")
     data_time = AverageMeter("Data", ":6.3f")
     losses = AverageMeter("Loss", ":.4f")
     top1 = AverageMeter("Acc_1", ":6.2f")
-    top5 = AverageMeter("Acc_5", ":6.2f")
+
     progress = ProgressMeter(
         len(train_loader),
-        [batch_time, data_time, losses, top1, top5],
+        [batch_time, data_time, losses, top1],
         prefix="Epoch: [{}]".format(epoch),
     )
 
@@ -43,14 +44,14 @@ def train(
                 "lr: {:.5f}".format(optimizer.param_groups[0]["lr"]),
             )
 
+        input_data = input_data.type(torch.LongTensor)
         output = model(input_data)
         loss = criterion(output, target)
 
         # measure accuracy and record loss
-        acc1, acc5 = accuracy(output, target, topk=(1, 5))
+        acc1 = accuracy(output, target)[0]
         losses.update(loss.item(), input_data.size(0))
         top1.update(acc1[0], input_data.size(0))
-        top5.update(acc5[0], input_data.size(0))
 
         optimizer.zero_grad()
         loss.backward()
@@ -65,3 +66,7 @@ def train(
             progress.write_to_tensorboard(
                 writer, "train", epoch * len(train_loader) + i
             )
+
+
+
+
