@@ -1,10 +1,33 @@
 import numpy as np
 import pandas as pd
-from dataset.data_rough_processing import get_processed_df
+# from dataset.data_rough_processing import get_processed_df
 import string
 import re
 from emot.emo_unicode import UNICODE_EMOJI
-from dataset.data_rough_processing import get_processed_df
+
+MICROTEXT_MAP = {
+    "lol": "laugh out loud",
+    "lmao": "laugh my ass off",
+    "cuz": "because",
+    "bc": "because",
+    "bcuz": "because",
+    "bcoz": "because",
+    "b/c": "because",
+    "btw": "by the way",
+    "omg": "oh my god",
+    "omfg": "oh my fucking god",
+    "wtf": "what the fuck",
+    "tf": "the fuck",
+    "convo": "conversation",
+    "ngl": "not gonna lie",
+    "tbh": "to be honest",
+    "js": "just saying",
+    "xd": "laugh",
+}
+
+STOP_WORD = {
+    None
+}
 
 
 # %% wrapper
@@ -48,6 +71,23 @@ def remove_emoji(text: str) -> str:
     pass
 
 
+class ReplaceWords:
+    """
+    Repalaes words in a text with a given map, by default it uses
+     our predefined microtext map
+    """
+
+    def __init__(self, word_map=None):
+        if word_map is None:
+            word_map = MICROTEXT_MAP
+        self.word_map = word_map
+
+    def __call__(self, text: str) -> str:
+        for word in self.word_map:
+            text = re.sub(fr"\b{word}\b", self.word_map[word], text, flags=re.IGNORECASE)
+        return text
+
+
 # if the function is stateful, e.g. relies a list of stop words, then it should be a class
 class RemoveStopWords:
     def __init__(self, stop_words: list):
@@ -67,12 +107,17 @@ class RemoveStopWords:
 
 
 # %%
-df = get_processed_df()
+# df = get_processed_df()
+#
+# pipeline = DataProcessingPipeline([
+#     case_folding,
+#     replace_emoji_with_text,
+# ])
+#
+#
+# temps = df["Text"].apply(pipeline)
 
-pipeline = DataProcessingPipeline([
-    case_folding,
-    replace_emoji_with_text,
-])
 
-
-temps = df["Text"].apply(pipeline)
+if __name__ == '__main__':
+    a = ReplaceWords(MICROTEXT_MAP)
+    print(a(" xd "))
