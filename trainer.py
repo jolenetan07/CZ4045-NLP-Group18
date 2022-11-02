@@ -13,6 +13,7 @@ def train(
         model: nn.Module,
         device: torch.device,
         train_loader,
+        val_loader,
         criterion,
         optimizer: torch.optim.Optimizer,
         epoch: int,
