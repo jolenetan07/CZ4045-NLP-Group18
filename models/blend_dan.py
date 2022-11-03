@@ -39,18 +39,15 @@ class RobertaDAN(nn.Module):
         Returns:
             _type_: _description_
         """
-        
+
         x, y_roberta = x[:, :-3], x[:, -3:]
-
-
         x = self.embed(x)
         x = x.mean(dim=1)
         x = self.dropout1(x)
         x = self.bn1(x)
         x = self.fc1(x)
         # here, we use the roberta model to provide generic sentiment feature
-        x  = torch.cat((x, y_roberta), dim=1)
+        x = torch.cat((x, y_roberta), dim=1)
         x = self.bn2(x)
         x = self.fc2(x)
         return x
-

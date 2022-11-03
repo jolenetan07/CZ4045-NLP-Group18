@@ -6,7 +6,7 @@ from torch.nn.functional import one_hot
 
 
 def onehot(x, c):
-    return np.eye(c)[x.reshape(-1)]
+    return np.eye(c, dtype=int)[x.reshape(-1)]
 
 
 def get_dataloaders(batch_size, data_path='dataset/biden_tweets_manually_labeled_roberta_labeled.csv'):
@@ -25,7 +25,7 @@ def get_dataloaders(batch_size, data_path='dataset/biden_tweets_manually_labeled
     roberta_onehot = onehot(roberta_full_nparr, 3)
     tokens_full_nparr = np.asarray(a=[list_string_to_np_arr(
         x) for x in tokens_full_series.to_list()], dtype=int)
-    concat_input = np.concatenate((tokens_full_nparr, roberta_onehot), axis=1)
+    concat_input = np.concatenate((tokens_full_nparr, roberta_onehot), axis=1,)
 
     train_valid_split_point = int(len(tokens_full_nparr) * 0.8)
     valid_test_split_point = int(len(tokens_full_nparr) * 0.9)
