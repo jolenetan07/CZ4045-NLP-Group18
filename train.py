@@ -81,7 +81,7 @@ def get_model(args):
     the architecture of model should be implemented in models/__init__.py
     """
     Model = models.__dict__[args.arch]
-    if args.arch in ["DAN"]:
+    if args.arch in ["DAN", "robertadan"]:
         model = Model(args.vocab_size,
                       args.embed_dim,
                       args.hidden_dim,

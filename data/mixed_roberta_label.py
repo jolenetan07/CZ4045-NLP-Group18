@@ -59,6 +59,5 @@ def list_string_to_np_arr(string):
     return np.asarray(str_list, dtype=int)
 
 
-if __name__ == '__main__':
-    train, test, val = get_dataloaders(
-        32, 'data/mixed_roberta_label.py')
+
+
