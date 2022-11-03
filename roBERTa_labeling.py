@@ -60,7 +60,7 @@ def get_roBERTa_label(df):
 
 
 def roberta_labeled_df():
-    df = get_processed_df('dataset/biden_tweets_labeled.csv')
+    df = get_processed_df('dataset/biden_tweets_labeled.csv',include_polarity=True)
     df['roberta_labeled'] = get_roBERTa_label(df)
     df.to_csv('dataset/biden_tweets_manually_labeled_roberta_labeled.csv')
     return df

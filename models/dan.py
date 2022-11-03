@@ -37,6 +37,8 @@ class DAN(nn.Module):
         Returns:
             _type_: _description_
         """
+        
+        x, y_roberta = x[:, :-3], x[:, -3:]
 
 
         x = self.embed(x)

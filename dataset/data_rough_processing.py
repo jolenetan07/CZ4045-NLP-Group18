@@ -11,7 +11,7 @@ import re
 import nltk
 
 
-def get_processed_df(data_path='dataset/biden_tweets_clean.csv'):
+def get_processed_df(data_path='dataset/biden_tweets_clean.csv', include_polarity=False):
     nltk.download("stopwords")
     nltk.download("punkt")
     nltk.download("vader_lexicon")
@@ -38,7 +38,7 @@ def get_processed_df(data_path='dataset/biden_tweets_clean.csv'):
     # data_path = "biden_tweets_labeled.csv"
     # data_path = "dataset/biden_tweets_clean.csv"
     # columns_to_read = [text_col_name, subjectivity_label_name, polarity_label_name]
-    columns_to_read = [text_col_name]
+    columns_to_read = [text_col_name, polarity_label_name]
 
     unk_word_name = "unknown word"
     unknown_word_id = -1
@@ -82,7 +82,8 @@ def get_processed_df(data_path='dataset/biden_tweets_clean.csv'):
             words[idx] = words[idx].replace("’", "'")
             words[idx] = words[idx].replace("`", "'")
 
-        words = [x if not re.match(r"https?:", x) else "website_name" for x in words]
+        words = [x if not re.match(r"https?:", x)
+                 else "website_name" for x in words]
         words_w_at_tags = [x for x in words if not re.match(r".*@.*", x)]
 
         result = ''
@@ -106,9 +107,11 @@ def get_processed_df(data_path='dataset/biden_tweets_clean.csv'):
 
     tweets_csv[token_col_name] = tweets_csv.apply(tweet_en_tokenize, axis=1)
 
-    # tweets_csv[polarity_label_name] = tweets_csv.apply(apply_self_mapping_of_label, axis=1)
+    if include_polarity:
+        tweets_csv[polarity_label_name] = tweets_csv.apply(apply_self_mapping_of_label, axis=1)
 
-    tweets_csv[length_col_name] = tweets_csv.apply(lambda x: len(x[token_col_name]), axis=1)
+    tweets_csv[length_col_name] = tweets_csv.apply(
+        lambda x: len(x[token_col_name]), axis=1)
 
     tweets_csv = tweets_csv[tweets_csv[length_col_name] <= truncate_length]
 
@@ -116,7 +119,8 @@ def get_processed_df(data_path='dataset/biden_tweets_clean.csv'):
     print(type(tweet_freq_dict))
     tweet_freq_dict.tabulate(25)
 
-    vocab_to_int_encoding = {pair[1]: pair[0] + 1 for pair in enumerate(tweet_freq_dict)}
+    vocab_to_int_encoding = {pair[1]: pair[0] +
+                             1 for pair in enumerate(tweet_freq_dict)}
     # print(len(vocab_to_int_encoding))
     # print(type(vocab_to_int_encoding))
 
@@ -145,7 +149,8 @@ def get_processed_df(data_path='dataset/biden_tweets_clean.csv'):
             senti = sia.polarity_scores(x[text_col_name])
             return senti['compound']
 
-        tweets_csv[ref_sentiment_name] = tweets_csv.apply(tweet_find_nltk_polarity, axis=1)
+        tweets_csv[ref_sentiment_name] = tweets_csv.apply(
+            tweet_find_nltk_polarity, axis=1)
 
     if pad_features:
         # pad features
@@ -154,9 +159,10 @@ def get_processed_df(data_path='dataset/biden_tweets_clean.csv'):
             padding = [0] * (truncate_length - len(tokens))
             return padding + tokens
 
-        tweets_csv.loc[:, tokenized_col_name] = tweets_csv.apply(pad_tokens, axis=1)
+        tweets_csv.loc[:, tokenized_col_name] = tweets_csv.apply(
+            pad_tokens, axis=1)
     return tweets_csv
 
 
-if __name__ == '__main__':
-    get_processed_df('../dataset/biden_tweets_clean.csv')
+if __name__ == '__main__': 
+    df = get_processed_df('dataset/biden_tweets_labeled.csv',include_polarity=True)
