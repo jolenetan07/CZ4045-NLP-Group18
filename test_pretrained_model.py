@@ -12,17 +12,24 @@ subjectivity = df['subjectivity'].to_numpy()
 # 0:neg, 1:pos, 2:neutral
 polarity = df['polarity'].to_numpy()
 
-polarity_onehot = np.zeros((len(polarity), 3))
 
-for (i, p) in enumerate(polarity):
-    if p == 0:
-        polarity_onehot[i][0] = 1
-    elif p == 1:
-        polarity_onehot[i][2] = 1
-    elif p == 2:  # put neutral in the middle
-        polarity_onehot[i][1] = 1
-    else:
-        raise ValueError('polarity value not in range')
+
+def remap_label(polarity):
+    polarity_onehot = np.zeros((len(polarity), 3))
+    for (i, p) in enumerate(polarity):
+        if p == 0:
+            polarity_onehot[i][0] = 1
+        elif p == 1:
+            polarity_onehot[i][2] = 1
+        elif p == 2:  # put neutral in the middle
+            polarity_onehot[i][1] = 1
+        else:
+            raise ValueError('polarity value not in range')
+    return polarity_onehot
+
+
+#  roBERTa is  0 neg, 1 neutral, 2 pos, remap the labels
+polarity_onehot = remap_label(polarity)
 
 # %%
 roberta = "cardiffnlp/twitter-roberta-base-sentiment"

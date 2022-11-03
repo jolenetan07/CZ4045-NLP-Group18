@@ -37,3 +37,4 @@ class DAN(nn.Module):
         x = self.bn2(x)
         x = self.fc2(x)
         return x
+

@@ -3,6 +3,8 @@ import yaml
 import torch
 import os
 import shutil
+from sklearn.metrics import precision_score, recall_score, f1_score
+from distutils.dir_util import copy_tree
 
 
 def load_config(args):
@@ -36,29 +38,13 @@ def get_arg(arg: str):
     return arg.split("=")[0]
 
 
-def accuracy(output, target, topk=(1,)):
-    """
-    Obtain the topk accuracy, which means the if the correct
-    label is in the topk largest logits, then the prediction considered
-    is correct.
-
-
-    """
-    # for multi-class prediction
+def accuracy(output, target):
     if output.size(1) != 1:
         with torch.no_grad():
-            maxk = max(topk)
             batch_size = target.size(0)
-
-            _, pred = output.topk(maxk, 1, True, True)
-            pred = pred.t()
-            correct = pred.eq(target.view(1, -1).expand_as(pred))
-
-            res = []
-            for k in topk:
-                correct_k = correct[:k].view(-1).float().sum(0, keepdim=True)
-                res.append(correct_k.mul_(100.0 / batch_size))
-            return res
+            _, pred = output.max(1)
+            correct = pred.eq(target.view_as(pred)).float().sum()
+            return correct.mul_(100.0 / batch_size)
     else:
         # binary class with only logit output
         with torch.no_grad():
@@ -77,6 +63,27 @@ def save_checkpoint(
             os.path.join(result_dir, filename),
             os.path.join(result_dir, "model_best.pth.tar"),
         )
+
+
+def clone_results_to_latest_subdir(src, dst):
+    if not os.path.exists(dst):
+        os.mkdir(dst)
+    copy_tree(src, dst)
+
+
+def precision(output, target):
+    _, pred = output.max(1)
+    return precision_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)
+
+
+def recall(output, target):
+    _, pred = output.max(1)
+    return recall_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)
+
+
+def f1(output, target):
+    _, pred = output.max(1)
+    return f1_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)
 
 
 class AverageMeter(object):

@@ -5,15 +5,13 @@ import torch.nn as nn
 import torchvision
 from torch.utils.tensorboard import SummaryWriter
 from utils.logging import AverageMeter, ProgressMeter
-from utils.logging import accuracy
-from utils.eval import val
+from utils.logging import accuracy, precision, recall, f1
 
 
 def train(
         model: nn.Module,
         device: torch.device,
         train_loader,
-        val_loader,
         criterion,
         optimizer: torch.optim.Optimizer,
         epoch: int,
@@ -22,13 +20,15 @@ def train(
     print(" ->->->->->->->->->-> ONE EPOCH TRAINING <-<-<-<-<-<-<-<-<-<-")
 
     batch_time = AverageMeter("Time", ":6.3f")
-    data_time = AverageMeter("Data", ":6.3f")
     losses = AverageMeter("Loss", ":.4f")
     top1 = AverageMeter("Acc_1", ":6.2f")
+    precisions = AverageMeter("Precision", ":.4f")
+    recalls = AverageMeter("Recall", ":.4f")
+    f1_scores = AverageMeter("F1", ":.4f")
 
     progress = ProgressMeter(
         len(train_loader),
-        [batch_time, data_time, losses, top1],
+        [batch_time, losses, top1, precisions, recalls, f1_scores],
         prefix="Epoch: [{}]".format(epoch),
     )
 
@@ -50,9 +50,16 @@ def train(
         loss = criterion(output, target)
 
         # measure accuracy and record loss
-        acc1 = accuracy(output, target)[0]
+        acc1 = accuracy(output, target)
+        precision_score = precision(output, target)
+        recall_score = recall(output, target)
+        f1_score = f1(output, target)
+
         losses.update(loss.item(), input_data.size(0))
-        top1.update(acc1[0], input_data.size(0))
+        top1.update(acc1, input_data.size(0))
+        precisions.update(precision_score, input_data.size(0))
+        recalls.update(recall_score, input_data.size(0))
+        f1_scores.update(f1_score, input_data.size(0))
 
         optimizer.zero_grad()
         loss.backward()
@@ -67,7 +74,3 @@ def train(
             progress.write_to_tensorboard(
                 writer, "train", epoch * len(train_loader) + i
             )
-
-
-
-

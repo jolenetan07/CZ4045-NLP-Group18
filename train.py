@@ -3,14 +3,14 @@ from torch.utils.tensorboard import SummaryWriter
 
 import random
 import numpy as np
-
+import time
 import os
 from pathlib import Path
 
 import models
 from args import parse_args
 from trainer import train
-from utils.logging import load_config, save_checkpoint
+from utils.logging import load_config, save_checkpoint, clone_results_to_latest_subdir
 from utils.schedules import get_optimizer, get_lr_policy
 from utils.eval import val
 from utils.models import prepare_model
@@ -71,15 +71,6 @@ def get_device(args):
     use_cuda = not args.no_cuda and torch.cuda.is_available()
     gpu_list = [int(i) for i in args.gpu.strip().split(",")]
 
-    # if not using cuda, use cpu or metal-gpu
-    # this part is to detect if there are any metal device
-    # available for acceleration (for macos)
-    # you can delete it if causing any issue
-    if not use_cuda and hasattr(torch.backends, "mps"):
-        if torch.backends.mps.is_available():
-            print("Using MPS")
-            return torch.device("mps")
-
     return torch.device(f"cuda:{gpu_list[0]}" if use_cuda else "cpu")
 
 
@@ -139,13 +130,16 @@ def main():
 
     # Model training iterations start here
     best_val_acc = 0
+    start_time = time.time()
+
     for epoch in range(args.epochs + args.warmup_epochs):
         lr_policy(epoch)  # adjust learning rate
 
         train(model, device, train_loader, criterion, optimizer, epoch, args, writer)
 
         # do model validation after each training epoch
-        val_acc = val(model, device, val_loader, criterion, args, writer, epoch=epoch)
+        val_acc, val_precision, val_recall, val_f1 = val(model, device, val_loader, criterion, args, writer,
+                                                         epoch=epoch)
 
         is_best = val_acc > best_val_acc
 
@@ -158,16 +152,26 @@ def main():
             "state_dict": model.state_dict(),
             "best_prec1": best_val_acc,
             "optimizer": optimizer.state_dict(),
-
         }
 
         # only save the checkpoint of current  epoch  and checkpoint having the best validation accuracy
         save_checkpoint(training_state, is_best, os.path.join(result_sub_dir, "checkpoint"))
-        print(f"Epoch {epoch}, val_acc: {val_acc}, best_val_acc: {best_val_acc}")
+        print(
+            f"Epoch {epoch}, val_acc: {val_acc}, best_val_acc: {best_val_acc}, val_precision: {val_precision}, "
+            f"val_recall: {val_recall}, val_f1: {val_f1}")
+
+        clone_results_to_latest_subdir(
+            result_sub_dir, os.path.join(result_main_dir, "latest_exp")
+        )
+
+    total_time = time.time() - start_time
+    print(f"Total training time: {total_time}")
 
     # Test model
-    test_acc = val(model, device, test_loader, criterion, args, writer, epoch="test")
-    print(f"Training finished, test_acc: {test_acc}")
+    test_acc, test_precision, test_recall, test_f1 = val(model, device, test_loader, criterion, args, writer,
+                                                         epoch="test")
+    print(f"Training finished, test_acc: {test_acc}, test_precision: {test_precision}, test_recall: {test_recall}, "
+          f"test_f1: {test_f1}") 
 
 
 if __name__ == "__main__":

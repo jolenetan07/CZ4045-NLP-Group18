@@ -97,7 +97,7 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
 
     tweets_csv[token_col_name] = tweets_csv.apply(tweet_en_tokenize, axis=1)
 
-    tweets_csv[polarity_label_name] = tweets_csv.apply(apply_self_mapping_of_label, axis=1)
+    # tweets_csv[polarity_label_name] = tweets_csv.apply(apply_self_mapping_of_label, axis=1)
 
     tweets_csv[length_col_name] = tweets_csv.apply(lambda x: len(x[token_col_name]), axis=1)
 
