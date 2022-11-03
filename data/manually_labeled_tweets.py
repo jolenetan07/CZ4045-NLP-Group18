@@ -13,6 +13,7 @@ import nltk
 
 overall_tokens = []
 
+
 def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
     """
     Around 1000 data records, that is manually labeled
@@ -30,7 +31,6 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
 
     # nltk.download()
 
-
     text_col_name = "Text"
     subjectivity_label_name = "subjectivity"
     polarity_label_name = "polarity"
@@ -40,8 +40,6 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
     ref_sentiment_name = "NLTK ref sentiment"
 
     columns_to_read = [text_col_name, subjectivity_label_name, polarity_label_name]
-
-
 
     use_csv_col_as_idx = False
 
@@ -55,8 +53,6 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
         tweets_csv = pd.read_csv(data_path, usecols=columns_to_read)
 
     stopwords = nltk.corpus.stopwords.words("english")
-
-
 
     """
     punct to replace: 
@@ -155,14 +151,12 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
 
     tweets_csv.loc[:, tokenized_col_name] = tweets_csv.apply(pad_tokens, axis=1)
 
-
-
     tokens_full_series = tweets_csv[tokenized_col_name]
     polarity_full_series = tweets_csv[polarity_label_name]
     # tokens_full_series.to_list()
 
     tokens_full_nparr = np.asarray(tokens_full_series.to_list(), dtype=int)
-    np.random.shuffle(tokens_full_nparr)
+    # np.random.shuffle(tokens_full_nparr)
 
     train_valid_split_point = int(len(tokens_full_nparr) * 0.8)
     valid_test_split_point = int(len(tokens_full_nparr) * 0.9)
@@ -172,7 +166,7 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
     test_tokens = tokens_full_nparr[valid_test_split_point:]
 
     polarity_full_nparr = np.asarray(polarity_full_series.to_list(), dtype=int)
-    np.random.shuffle(polarity_full_nparr)
+    # np.random.shuffle(polarity_full_nparr)
 
     train_polarity = polarity_full_nparr[: train_valid_split_point]
     valid_polarity = polarity_full_nparr[train_valid_split_point: valid_test_split_point]
@@ -192,7 +186,7 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
 
 if __name__ == '__main__':
     train, val, test = get_dataloaders(16, "../dataset/biden_tweets_labeled.csv")
-    samp  = []
+    samp = []
     cnt = 0
     for data in train:
         samp.extend(data[1])
