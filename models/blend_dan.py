@@ -50,7 +50,6 @@ class RobertaDAN(nn.Module):
         x = self.fc1(x)
         # here, we use the roberta model to provide generic sentiment feature
         x  = torch.cat((x, y_roberta), dim=1)
-        x = self.dropout2(x)
         x = self.bn2(x)
         x = self.fc2(x)
         return x
