@@ -41,6 +41,8 @@ class RobertaDAN(nn.Module):
         """
 
         x, y_roberta = x[:, :-3], x[:, -3:]
+        # x = x.to(torch.device('cuda:0'))
+        # y = y_roberta.to(torch.device('cuda:0'))
         x = self.embed(x)
         x = x.mean(dim=1)
         x = self.dropout1(x)

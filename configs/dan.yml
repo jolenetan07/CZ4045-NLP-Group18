@@ -15,7 +15,7 @@ dropout: 0.1
 
 
 # ->->->->-> Train <-<-<-<-<-
-epochs: 200
+epochs: 20
 optimizer: "sgd"
 lr: 0.1
 lr_schedule: "cosine"
@@ -39,5 +39,5 @@ test_batch_size: 16
 # ->->->->-> Misc <-<-<-<-<-
 gpu: "0"
 no_cuda: "False"
-seed: 1108
+seed: 11080306
 print_freq: 16

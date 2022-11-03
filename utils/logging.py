@@ -73,17 +73,17 @@ def clone_results_to_latest_subdir(src, dst):
 
 def precision(output, target):
     _, pred = output.max(1)
-    return precision_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)
+    return precision_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)*100
 
 
 def recall(output, target):
     _, pred = output.max(1)
-    return recall_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)
+    return recall_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)*100
 
 
 def f1(output, target):
     _, pred = output.max(1)
-    return f1_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)
+    return f1_score(target.cpu(), pred.cpu(), average="macro", zero_division=0)*100
 
 
 class AverageMeter(object):
