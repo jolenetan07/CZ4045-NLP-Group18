@@ -31,6 +31,7 @@ def roBERTa():
     roberta = "cardiffnlp/twitter-roberta-base-sentiment"
     model = AutoModelForSequenceClassification.from_pretrained(roberta)
     tokenizer = AutoTokenizer.from_pretrained(roberta)
+    tokenizer.model_max_length = 512
     return model, tokenizer
 
 
@@ -38,13 +39,16 @@ def get_roBERTa_label(df):
     roberta, tokenizer = roBERTa()
     pipeline = DataProcessingPipeline([
         ReplaceWords(),
-        replace_emoji_with_text,
+        # replace_emoji_with_text,
     ])
     text_data = df['Text'].apply(pipeline).to_numpy()
     predicted_labels = []
 
     for (i, tweet) in enumerate(text_data):
         encoded_tweet = tokenizer(tweet, return_tensors='pt')
+        if encoded_tweet['input_ids'].shape[1] > 512:
+            print(tweet)
+
         output = roberta(encoded_tweet['input_ids'], encoded_tweet['attention_mask'])
         scores = softmax(output[0][0].detach().numpy())
         predicted_labels.append(scores.argmax())
