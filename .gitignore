@@ -3,4 +3,8 @@
 test.py
 .pytest_cache
 trained_models
+*.pyc
+*.tar
+.vscode
+pretrained_model
 

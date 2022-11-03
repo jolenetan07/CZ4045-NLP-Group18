@@ -54,14 +54,6 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
 
     stopwords = nltk.corpus.stopwords.words("english")
 
-    """
-    punct to replace: 
-    ’ to '
-    ` to '
-    
-    
-    """
-
     def remove_at_tags(x: pd.Series):
         x[text_col_name]: str
         words = x[text_col_name].split()
@@ -104,8 +96,8 @@ def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
     tweet_freq_dict.tabulate(25)
 
     vocab_to_int_encoding = {pair[1]: pair[0] + 1 for pair in enumerate(tweet_freq_dict)}
-    print(len(vocab_to_int_encoding))
-    print(type(vocab_to_int_encoding))
+    # print(len(vocab_to_int_encoding))
+    # print(type(vocab_to_int_encoding))
 
     truncate_to_unknown_corpus_length_limit = 5000
     assert truncate_to_unknown_corpus_length_limit < len(

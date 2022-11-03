@@ -37,5 +37,11 @@ def print_gradient_update(model):
 def freeze_layers(model, var_name):
     assert var_name in ["weight", "bias"]
     for i, v in model.named_modules():
-        if getattr(v, var_name) is not None:
-            getattr(v, var_name).requires_grad = False
+        if hasattr(v, var_name):
+            if getattr(v, var_name) is not None:
+                getattr(v, var_name).requires_grad = False
+
+
+def show_gradients(model):
+    for i, v in model.named_parameters():
+        print(f"variable = {i}, Gradient requires_grad = {v.requires_grad}")

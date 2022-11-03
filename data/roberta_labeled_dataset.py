@@ -36,7 +36,6 @@ def get_dataloaders(batch_size, data_path='dataset/biden_tweets_processed_robert
 
     return train_loader, valid_loader, test_loader
 
-
 def list_string_to_np_arr(string):
     string = string.replace("[", "")
     string = string.replace("]", "")

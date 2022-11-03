@@ -4,8 +4,11 @@ import pandas as pd
 import numpy as np
 from dataset.data_processing_pipeline import *
 from dataset.data_rough_processing import get_processed_df
+
 from torch import nn
 import torch
+
+# Here, we use a pretrained model roBERTa to to auto label out dataset
 
 
 def remap_label(predict):
@@ -57,9 +60,9 @@ def get_roBERTa_label(df):
 
 
 def roberta_labeled_df():
-    df = get_processed_df()
+    df = get_processed_df('dataset/biden_tweets_labeled.csv')
     df['roberta_labeled'] = get_roBERTa_label(df)
-    df.to_csv('dataset/biden_tweets_processed_roberta_labeled.csv')
+    df.to_csv('dataset/biden_tweets_manually_labeled_roberta_labeled.csv')
     return df
 
 

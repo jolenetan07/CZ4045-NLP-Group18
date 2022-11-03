@@ -70,7 +70,8 @@ def get_device(args):
     """
     use_cuda = not args.no_cuda and torch.cuda.is_available()
     gpu_list = [int(i) for i in args.gpu.strip().split(",")]
-
+    if use_cuda: print("Use Cuda")
+    else: print("use cpu")
     return torch.device(f"cuda:{gpu_list[0]}" if use_cuda else "cpu")
 
 
@@ -96,6 +97,7 @@ def main():
     # load configuration file specified by --config
     args = parse_args()
     load_config(args)
+    print(args)
 
     # create checkpoint dir
     result_main_dir, result_sub_dir = create_checkpoint_dir(args)
