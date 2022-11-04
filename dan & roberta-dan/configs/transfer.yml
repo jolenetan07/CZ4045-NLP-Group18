@@ -1,0 +1,47 @@
+# ->->->->-> Primary <-<-<-<-<-
+exp_name: "DAN"
+result_dir: "./trained_models"
+#num_classes: 1
+
+
+
+# ->->->->-> Model <-<-<-<-<-
+arch: "DAN"
+vocab_size: 5002
+output_dim: 3
+embed_dim: 50
+hidden_dim: 50
+dropout: 0.1
+
+
+# ->->->->-> Train <-<-<-<-<-
+epochs: 10
+optimizer: "sgd"
+lr: 0.0001
+lr_schedule: "cosine"
+wd: 0.0001
+momentum: 0.9
+
+#warmup
+warmup_epochs: 0
+warmup_lr: 0.0001
+
+
+# ->->->->-> Dataset <-<-<-<-<-
+dataset: "manually_labeled_tweets"
+batch_size: 16
+test_batch_size: 16
+
+#data_dir: "./dataset"
+#data_fraction: 1.0
+
+# ->->->->-> transfer learning  <-<-<-<-<-
+checkpoint: "pretrained_model/checkpoint/model_best.pth.tar"
+target_output_dim: 3
+freeze_source: True
+
+# ->->->->-> Misc <-<-<-<-<-
+gpu: "0"
+no_cuda: "False"
+seed: 1108
+print_freq: 16
