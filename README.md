@@ -117,7 +117,7 @@
 * '<model>_results_full.csv : append predicted polarity by <model> classifier to full dataset
 * '<model>_results_test_labeled.csv : append predicted polarity by <model> classifier to labeled test dataset
 
-*** deep learning folder ***
+*** deep learning folder ***\
 /* TODO :: insert file descriptions here */
 
 ## Classification Dashboard (UI)
