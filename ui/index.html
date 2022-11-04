@@ -40,23 +40,35 @@
           </li>
           <li class="sidebar-list-item">
             <a href="#model1-section"</a>
-            <span class="material-icons-outlined">looks_one</span> VADER
+            <span class="material-icons-outlined">filter_1</span> VADER
           </li>
           <li class="sidebar-list-item">
             <a href="#model2-section"</a>
-            <span class="material-icons-outlined">looks_two</span> TextBlob
+            <span class="material-icons-outlined">filter_2</span> TextBlob
           </li>
           <li class="sidebar-list-item"> 
             <a href="#model3-section"</a>
-            <span class="material-icons-outlined">looks_3</span> LinearSVC
+            <span class="material-icons-outlined">filter_3</span> LinearSVC
           </li>
           <li class="sidebar-list-item">
             <a href="#model5-section"</a>
-            <span class="material-icons-outlined">looks_4</span> XGBoost
+            <span class="material-icons-outlined">filter_4</span> XGBoost
           </li>
           <li class="sidebar-list-item">
             <a href="#model6-section"</a>
-            <span class="material-icons-outlined">looks_5</span> Naive Bayes
+            <span class="material-icons-outlined">filter_5</span> Naive Bayes
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#model7-section"</a>
+            <span class="material-icons-outlined">filter_6</span> LSTM
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#model8-section"</a>
+            <span class="material-icons-outlined">filter_7</span> DAN
+          </li>
+          <li class="sidebar-list-item">
+            <a href="#model9-section"</a>
+            <span class="material-icons-outlined">filter_8</span> roBERTa-DAN
           </li>
         </ul>
       </aside>
@@ -184,6 +196,63 @@
               <p>0.83</p>
             </div>
           </div>
+
+          <!-- lstm row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>LSTM</p>
+            </div>
+            <div class="table-cell">
+                <p>0.68</p>
+            </div>
+            <div class="table-cell">
+              <p>0.59</p>
+            </div>
+            <div class="table-cell">
+              <p>0.56</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.58</p>
+            </div>
+          </div>
+
+          <!-- dan row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Deep Attention NN</p>
+            </div>
+            <div class="table-cell">
+                <p>0.39</p>
+            </div>
+            <div class="table-cell">
+              <p>0.48</p>
+            </div>
+            <div class="table-cell">
+              <p>0.39</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.39</p>
+            </div>
+          </div>
+
+          <!-- roberta-dan row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>roBERTa-DAN</p>
+            </div>
+            <div class="table-cell">
+                <p>0.58</p>
+            </div>
+            <div class="table-cell">
+              <p>0.66</p>
+            </div>
+            <div class="table-cell">
+              <p>0.58</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.58</p>
+            </div>
+          </div>
         
         </div>
 
@@ -255,22 +324,6 @@
             </div>
           </div>
 
-          <!-- sgdc row -->
-          <div class="table-row">
-            <div class="table-cell first-cell">
-                <p>SGDC</p>
-            </div>
-            <div class="table-cell">
-              <p>5403</p>
-            </div>
-            <div class="table-cell">
-              <p>4349</p>
-            </div>
-            <div class="table-cell last-cell">
-              <p>7888</p>
-            </div>
-          </div>
-
           <!-- xgboost row -->
           <div class="table-row">
             <div class="table-cell first-cell">
@@ -302,6 +355,56 @@
               <p>8355</p>
             </div>
           </div>
+
+          <!-- lstm row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>LSTM</p>
+            </div>
+            <div class="table-cell">
+              <p>5000</p>
+            </div>
+            <div class="table-cell">
+              <p>3676</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>8955</p>
+            </div>
+          </div>
+
+          <!-- dan row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Deep Attention NN</p>
+            </div>
+            <div class="table-cell">
+              <p>7700</p>
+            </div>
+            <div class="table-cell">
+              <p>6122</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>3809</p>
+            </div>
+          </div>
+
+          <!-- roberta-dan row -->
+          <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>roBERTa-DAN</p>
+            </div>
+            <div class="table-cell">
+              <p>4777</p>
+            </div>
+            <div class="table-cell">
+              <p>3787</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>9067</p>
+            </div>
+          </div>
+
+                    
         
         </div>
 
@@ -909,6 +1012,342 @@
           <div id="bar-chart-6"></div>
         </div>
 
+      </div>
+
+      <!-- Model 7 - lstm Stuff -->
+      <div class="main-title" id="model7-section">
+        <p class="font-weight-bold">Long Short-Term Memory</p>
+      </div>
+              
+      <!-- Model 7 Table Stuff -->
+      <div class="table-box">
+        <div class="table-row table-head">
+            <div class="table-cell first-cell">
+              <p>Sentiment</p>
+            </div>
+            <div class="table-cell">
+              <p>Precision</p>
+            </div>
+            <div class="table-cell">
+              <p>Recall</p>
+            </div>
+            <div class="table-cell last-cell">
+            <p>F1-Score</p>
+            </div>
+        </div>
+
+
+        <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Positive</p>
+            </div>
+            <div class="table-cell">
+                <p>0.65</p>
+            </div>
+            <div class="table-cell">
+              <p>0.66</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.66</p>
+            </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Neutral</p>
+          </div>
+          <div class="table-cell">
+              <p>0.70</p>
+          </div>
+          <div class="table-cell">
+            <p>0.68</p>
+          </div>
+          <div class="table-cell last-cell">
+            <p>0.69</p>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Negative</p>
+          </div>
+          <div class="table-cell">
+              <p>0.69</p>
+          </div>
+          <div class="table-cell">
+            <p>0.71</p>
+          </div>
+          <div class="table-cell last-cell">
+            <p>0.70</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="main-cards">
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Positive Tweet Count</p>
+            <span class="material-icons-outlined text-green">sentiment_satisfied</span>
+          </div>
+          <span class="text-primary font-weight-bold">5000</span>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Neutral Tweet Count</p>
+            <span class="material-icons-outlined text-orange">sentiment_neutral</span>
+          </div>
+          <span class="text-primary font-weight-bold">3676</span>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Negative Tweet Count</p>
+            <span class="material-icons-outlined text-red">sentiment_dissatisfied</span>
+          </div>
+          <span class="text-primary font-weight-bold">8955</span>
+        </div>
+
+      </div>
+
+
+      <div class="charts">
+
+        <div class="charts-card">
+          <p class="chart-title">LSTM Pie Chart</p>
+          <div id="pie-chart-7"></div>
+        </div>
+
+        <div class="charts-card">
+          <p class="chart-title">LSTM Bar Plot</p>
+          <div id="bar-chart-7"></div>
+        </div>
+
+      </div>
+
+      <!-- Model 8 - dan Stuff -->
+      <div class="main-title" id="model8-section">
+        <p class="font-weight-bold">Deep Attention Neural Network</p>
+      </div>
+              
+      <!-- Model 8 Table Stuff -->
+      <div class="table-box">
+        <div class="table-row table-head">
+            <div class="table-cell first-cell">
+              <p>Sentiment</p>
+            </div>
+            <div class="table-cell">
+              <p>Precision</p>
+            </div>
+            <div class="table-cell">
+              <p>Recall</p>
+            </div>
+            <div class="table-cell last-cell">
+            <p>F1-Score</p>
+            </div>
+        </div>
+
+
+        <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Positive</p>
+            </div>
+            <div class="table-cell">
+                <p>0.36</p>
+            </div>
+            <div class="table-cell">
+              <p>0.37</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.37</p>
+            </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Neutral</p>
+          </div>
+          <div class="table-cell">
+              <p>0.39</p>
+          </div>
+          <div class="table-cell">
+            <p>0.41</p>
+          </div>
+          <div class="table-cell last-cell">
+            <p>0.40</p>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Negative</p>
+          </div>
+          <div class="table-cell">
+              <p>0.41</p>
+          </div>
+          <div class="table-cell">
+            <p>0.39</p>
+          </div>
+          <div class="table-cell last-cell">
+            <p>0.40</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="main-cards">
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Positive Tweet Count</p>
+            <span class="material-icons-outlined text-green">sentiment_satisfied</span>
+          </div>
+          <span class="text-primary font-weight-bold">7700</span>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Neutral Tweet Count</p>
+            <span class="material-icons-outlined text-orange">sentiment_neutral</span>
+          </div>
+          <span class="text-primary font-weight-bold">6122</span>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Negative Tweet Count</p>
+            <span class="material-icons-outlined text-red">sentiment_dissatisfied</span>
+          </div>
+          <span class="text-primary font-weight-bold">3809</span>
+        </div>
+
+      </div>
+
+
+      <div class="charts">
+
+        <div class="charts-card">
+          <p class="chart-title">DAN Pie Chart</p>
+          <div id="pie-chart-8"></div>
+        </div>
+
+        <div class="charts-card">
+          <p class="chart-title">DAN Bar Plot</p>
+          <div id="bar-chart-8"></div>
+        </div>
+
+      </div>
+
+      <!-- Model 9 - roberta-dan Stuff -->
+      <div class="main-title" id="model9-section">
+        <p class="font-weight-bold">roBERTa Deep Attention Neural Network</p>
+      </div>
+              
+      <!-- Model 9 Table Stuff -->
+      <div class="table-box">
+        <div class="table-row table-head">
+            <div class="table-cell first-cell">
+              <p>Sentiment</p>
+            </div>
+            <div class="table-cell">
+              <p>Precision</p>
+            </div>
+            <div class="table-cell">
+              <p>Recall</p>
+            </div>
+            <div class="table-cell last-cell">
+            <p>F1-Score</p>
+            </div>
+        </div>
+
+
+        <div class="table-row">
+            <div class="table-cell first-cell">
+                <p>Positive</p>
+            </div>
+            <div class="table-cell">
+                <p>0.55</p>
+            </div>
+            <div class="table-cell">
+              <p>0.??</p>
+            </div>
+            <div class="table-cell last-cell">
+              <p>0.??</p>
+            </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Neutral</p>
+          </div>
+          <div class="table-cell">
+              <p>0.60</p>
+          </div>
+          <div class="table-cell">
+            <p>0.62</p>
+          </div>
+          <div class="table-cell last-cell">
+            <p>0.61</p>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell first-cell">
+              <p>Negative</p>
+          </div>
+          <div class="table-cell">
+              <p>0.61</p>
+          </div>
+          <div class="table-cell">
+            <p>0.59</p>
+          </div>
+          <div class="table-cell last-cell">
+            <p>0.60</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="main-cards">
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Positive Tweet Count</p>
+            <span class="material-icons-outlined text-green">sentiment_satisfied</span>
+          </div>
+          <span class="text-primary font-weight-bold">4777</span>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Neutral Tweet Count</p>
+            <span class="material-icons-outlined text-orange">sentiment_neutral</span>
+          </div>
+          <span class="text-primary font-weight-bold">3787</span>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <p class="text-primary">Negative Tweet Count</p>
+            <span class="material-icons-outlined text-red">sentiment_dissatisfied</span>
+          </div>
+          <span class="text-primary font-weight-bold">9067</span>
+        </div>
+
+      </div>
+
+
+      <div class="charts">
+
+        <div class="charts-card">
+          <p class="chart-title">roBERTa-DAN Pie Chart</p>
+          <div id="pie-chart-9"></div>
+        </div>
+
+        <div class="charts-card">
+          <p class="chart-title">roBERTa-DAN Bar Plot</p>
+          <div id="bar-chart-9"></div>
+        </div>
+      
       </div>
 
 
