@@ -29,6 +29,9 @@
 |||||||| cnb_results_full.csv
 |||||||| cnb_results_test_labeled.csv
 
+| deep learning models
+/* TODO :: insert file structures here */
+
 | ui
 |||| index.html
 |||| styles.css
@@ -114,6 +117,8 @@
 * '<model>_results_full.csv : append predicted polarity by <model> classifier to full dataset
 * '<model>_results_test_labeled.csv : append predicted polarity by <model> classifier to labeled test dataset
 
+*** deep learning folder ***
+/* TODO :: insert file descriptions here */
 
 ## Classification Dashboard (UI)
 *** ui folder ***
