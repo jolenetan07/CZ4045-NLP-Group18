@@ -9,7 +9,7 @@
 |||| biden_tweets_labeled.csv\
 |||| biden_tweets_labeled_processed.csv\
 |||| biden_tweets_labeled_train.csv\
-|||| biden_tweets_labeled_test.csv\
+|||| biden_tweets_labeled_test.csv
 
 | classifiers\
 |||| vader_classifier.ipynb\
@@ -27,7 +27,7 @@
 |||||||| xgb_results_full.csv\
 |||||||| xgb_results_test_labeled.csv\
 |||||||| cnb_results_full.csv\
-|||||||| cnb_results_test_labeled.csv\
+|||||||| cnb_results_test_labeled.csv
 
 | deep learning models\
 /* TODO :: insert file structures here */
@@ -35,14 +35,14 @@
 | ui\
 |||| index.html\
 |||| styles.css\
-|||| scripts.js\
+|||| scripts.js
 
 | innovations\
 |||| tune-xgboost\
-|||||||| tune_xgb_classifier.ipynb\
+|||||||| tune_xgb_classifier.ipynb
 
 |||| choose-bayes\
-|||||||| choose_naivebayes_classifier.ipynb\
+|||||||| choose_naivebayes_classifier.ipynb
 
 |||| bigrams\
 |||||||| classifiers\
@@ -55,7 +55,7 @@
 |||||||||||||||||||| bigram_xgb_results_full.csv\
 |||||||||||||||||||| bigram_xgb_results_test_labeled.csv\
 |||||||||||||||||||| bigram_cnb_results_full.csv\
-|||||||||||||||||||| bigram_cnb_results_test_labeled.csv\
+|||||||||||||||||||| bigram_cnb_results_test_labeled.csv
 
 |||| trigrams\
 |||||||| classifiers\
@@ -68,7 +68,7 @@
 |||||||||||||||||||| trigram_xgb_results_full.csv\
 |||||||||||||||||||| trigram_xgb_results_test_labeled.csv\
 |||||||||||||||||||| trigram_cnb_results_full.csv\
-|||||||||||||||||||| trigram_cnb_results_test_labeled.csv\
+|||||||||||||||||||| trigram_cnb_results_test_labeled.csv
 
 
 ## Data Collection 
