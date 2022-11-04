@@ -15,7 +15,6 @@
 |||| vader_classifier.ipynb
 |||| textblob_classifier.ipynb
 |||| lsvc_classifier.ipynb
-|||| sgdc_classifier.ipynb
 |||| xgb_classifier.ipynb
 |||| cnb_classifier.ipynb
 |||| results
@@ -25,8 +24,6 @@
 |||||||| textblob_results_test_labeled.csv
 |||||||| lsvc_results_full.csv
 |||||||| lsvc_results_test_labeled.csv
-|||||||| sgdc_results_full.csv
-|||||||| sgdc_results_test_labeled.csv
 |||||||| xgb_results_full.csv
 |||||||| xgb_results_test_labeled.csv
 |||||||| cnb_results_full.csv
@@ -47,14 +44,11 @@
 |||| bigrams
 |||||||| classifiers
 |||||||||||||||| bigram_lsvc_classifier.ipynb
-|||||||||||||||| bigram_sgdc_classifier.ipynb
 |||||||||||||||| bigram_xgb_classifier.ipynb
 |||||||||||||||| bigram_cnb_classifier.ipynb
 |||||||||||||||| results
 |||||||||||||||||||| bigram_lsvc_results_full.csv
 |||||||||||||||||||| bigram_lsvc_results_test_labeled.csv
-|||||||||||||||||||| bigram_sgdc_results_full.csv
-|||||||||||||||||||| bigram_sgdc_results_test_labeled.csv
 |||||||||||||||||||| bigram_xgb_results_full.csv
 |||||||||||||||||||| bigram_xgb_results_test_labeled.csv
 |||||||||||||||||||| bigram_cnb_results_full.csv
@@ -63,14 +57,11 @@
 |||| trigrams
 |||||||| classifiers
 |||||||||||||||| trigram_lsvc_classifier.ipynb
-|||||||||||||||| trigram_sgdc_classifier.ipynb
 |||||||||||||||| trigram_xgb_classifier.ipynb
 |||||||||||||||| trigram_cnb_classifier.ipynb
 |||||||||||||||| results
 |||||||||||||||||||| trigram_lsvc_results_full.csv
 |||||||||||||||||||| trigram_lsvc_results_test_labeled.csv
-|||||||||||||||||||| trigram_sgdc_results_full.csv
-|||||||||||||||||||| trigram_sgdc_results_test_labeled.csv
 |||||||||||||||||||| trigram_xgb_results_full.csv
 |||||||||||||||||||| trigram_xgb_results_test_labeled.csv
 |||||||||||||||||||| trigram_cnb_results_full.csv
@@ -113,9 +104,6 @@
 ### linear support vector 
 * 'lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier
 
-### stochastic gradient descent 
-* 'sgdc_classifier.ipynb' : python script for sentiment analysis with SGDC classifier
-
 ### xgboost
 * 'xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier
 
@@ -149,9 +137,6 @@
 #### linear support vector 
 * 'bigram_lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier with bi-gram
 
-#### stochastic gradient descent 
-* 'bigram_sgdc_classifier.ipynb' : python script for sentiment analysis with SGDC classifier with bi-gram
-
 #### xgboost
 * 'bigram_xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier with bi-gram
 
@@ -167,9 +152,6 @@
 *** trigrams -> classifier folder ***
 #### linear support vector 
 * 'trigram_lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier with tri-gram
-
-#### stochastic gradient descent 
-* 'trigram_sgdc_classifier.ipynb' : python script for sentiment analysis with SGDC classifier with tri-gram
 
 #### xgboost
 * 'trigram_xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier with tri-gram
