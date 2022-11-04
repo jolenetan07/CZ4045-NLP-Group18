@@ -1,7 +1,7 @@
 # CZ4045 NLP Group18 Sentiment Analysis Project
 
 ## File Structure
-| datasets
+| datasets \n
 |||| crawl_data.ipynb
 |||| preprocess_data.ipynb
 |||| biden_tweets_raw.csv
