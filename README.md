@@ -2,73 +2,73 @@
 
 ## File Structure
 | datasets\
-|||| crawl_data.ipynb
-|||| preprocess_data.ipynb
-|||| biden_tweets_raw.csv
-|||| biden_tweets_processed.csv
-|||| biden_tweets_labeled.csv
-|||| biden_tweets_labeled_processed.csv
-|||| biden_tweets_labeled_train.csv
-|||| biden_tweets_labeled_test.csv
+|||| crawl_data.ipynb\
+|||| preprocess_data.ipynb\
+|||| biden_tweets_raw.csv\
+|||| biden_tweets_processed.csv\
+|||| biden_tweets_labeled.csv\
+|||| biden_tweets_labeled_processed.csv\
+|||| biden_tweets_labeled_train.csv\
+|||| biden_tweets_labeled_test.csv\
 
-| classifiers
-|||| vader_classifier.ipynb
-|||| textblob_classifier.ipynb
-|||| lsvc_classifier.ipynb
-|||| xgb_classifier.ipynb
-|||| cnb_classifier.ipynb
+| classifiers\
+|||| vader_classifier.ipynb\
+|||| textblob_classifier.ipynb\
+|||| lsvc_classifier.ipynb\
+|||| xgb_classifier.ipynb\
+|||| cnb_classifier.ipynb\
 |||| results
-|||||||| vader_results_full.csv
-|||||||| vader_results_test_labeled.csv
-|||||||| textblob_results_full.csv
-|||||||| textblob_results_test_labeled.csv
-|||||||| lsvc_results_full.csv
-|||||||| lsvc_results_test_labeled.csv
-|||||||| xgb_results_full.csv
-|||||||| xgb_results_test_labeled.csv
-|||||||| cnb_results_full.csv
-|||||||| cnb_results_test_labeled.csv
+|||||||| vader_results_full.csv\
+|||||||| vader_results_test_labeled.csv\
+|||||||| textblob_results_full.csv\
+|||||||| textblob_results_test_labeled.csv\
+|||||||| lsvc_results_full.csv\
+|||||||| lsvc_results_test_labeled.csv\
+|||||||| xgb_results_full.csv\
+|||||||| xgb_results_test_labeled.csv\
+|||||||| cnb_results_full.csv\
+|||||||| cnb_results_test_labeled.csv\
 
-| deep learning models
+| deep learning models\
 /* TODO :: insert file structures here */
 
-| ui
-|||| index.html
-|||| styles.css
-|||| scripts.js
+| ui\
+|||| index.html\
+|||| styles.css\
+|||| scripts.js\
 
-| innovations
-|||| tune-xgboost
-|||||||| tune_xgb_classifier.ipynb
+| innovations\
+|||| tune-xgboost\
+|||||||| tune_xgb_classifier.ipynb\
 
-|||| choose-bayes
-|||||||| choose_naivebayes_classifier.ipynb
+|||| choose-bayes\
+|||||||| choose_naivebayes_classifier.ipynb\
 
-|||| bigrams
-|||||||| classifiers
-|||||||||||||||| bigram_lsvc_classifier.ipynb
-|||||||||||||||| bigram_xgb_classifier.ipynb
-|||||||||||||||| bigram_cnb_classifier.ipynb
-|||||||||||||||| results
-|||||||||||||||||||| bigram_lsvc_results_full.csv
-|||||||||||||||||||| bigram_lsvc_results_test_labeled.csv
-|||||||||||||||||||| bigram_xgb_results_full.csv
-|||||||||||||||||||| bigram_xgb_results_test_labeled.csv
-|||||||||||||||||||| bigram_cnb_results_full.csv
-|||||||||||||||||||| bigram_cnb_results_test_labeled.csv
+|||| bigrams\
+|||||||| classifiers\
+|||||||||||||||| bigram_lsvc_classifier.ipynb\
+|||||||||||||||| bigram_xgb_classifier.ipynb\
+|||||||||||||||| bigram_cnb_classifier.ipynb\
+|||||||||||||||| results\
+|||||||||||||||||||| bigram_lsvc_results_full.csv\
+|||||||||||||||||||| bigram_lsvc_results_test_labeled.csv\
+|||||||||||||||||||| bigram_xgb_results_full.csv\
+|||||||||||||||||||| bigram_xgb_results_test_labeled.csv\
+|||||||||||||||||||| bigram_cnb_results_full.csv\
+|||||||||||||||||||| bigram_cnb_results_test_labeled.csv\
 
-|||| trigrams
-|||||||| classifiers
-|||||||||||||||| trigram_lsvc_classifier.ipynb
-|||||||||||||||| trigram_xgb_classifier.ipynb
-|||||||||||||||| trigram_cnb_classifier.ipynb
-|||||||||||||||| results
-|||||||||||||||||||| trigram_lsvc_results_full.csv
-|||||||||||||||||||| trigram_lsvc_results_test_labeled.csv
-|||||||||||||||||||| trigram_xgb_results_full.csv
-|||||||||||||||||||| trigram_xgb_results_test_labeled.csv
-|||||||||||||||||||| trigram_cnb_results_full.csv
-|||||||||||||||||||| trigram_cnb_results_test_labeled.csv
+|||| trigrams\
+|||||||| classifiers\
+|||||||||||||||| trigram_lsvc_classifier.ipynb\
+|||||||||||||||| trigram_xgb_classifier.ipynb\
+|||||||||||||||| trigram_cnb_classifier.ipynb\
+|||||||||||||||| results\
+|||||||||||||||||||| trigram_lsvc_results_full.csv\
+|||||||||||||||||||| trigram_lsvc_results_test_labeled.csv\
+|||||||||||||||||||| trigram_xgb_results_full.csv\
+|||||||||||||||||||| trigram_xgb_results_test_labeled.csv\
+|||||||||||||||||||| trigram_cnb_results_full.csv\
+|||||||||||||||||||| trigram_cnb_results_test_labeled.csv\
 
 
 ## Data Collection 
