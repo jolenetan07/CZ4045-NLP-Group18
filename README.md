@@ -66,11 +66,11 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 
 | deep learning models\
 |||| dan & roberta-dan\
-|||| lstm\
+|||| lstm
 
 | LSTM\
 |||| biden_tweets_labeled.csv\
-|||| model_test_ofeach.ipynb\
+|||| model_test_ofeach.ipynb
 
 | ui\
 |||| index.html\
