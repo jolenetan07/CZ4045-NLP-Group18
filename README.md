@@ -8,22 +8,23 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 2. run '<model_name>_classifier.ipynb' in 'classifiers' folder
     * generate classification results and predictions for that model
     * eg. running 'xgb_classifier.ipynb' generates the above for xgboost model 
+3. run 'model_test_ofeach.ipynb' for LSTM. it is a closure under that directory. We are sorry that this part is somehow badly refactored as this is independently developed. Also for LSTM result is generated on the fly.
 
-3. run 'index.html' in 'ui' folder
+4. run 'index.html' in 'ui' folder
     * access point to the ui classification dashboard 
 
-4. run 'bigram_<model_name>_classifier.ipynb' in 'innovations -> bigrams -> classifiers' folder
+5. run 'bigram_<model_name>_classifier.ipynb' in 'innovations -> bigrams -> classifiers' folder
     * generate bigram classification results and predictions for that model
     * eg. running 'bigram_lsvc_classifier.ipynb' generates the above for bigram linearSVC model
 
-5. run 'trigram_<model_name>_classifier.ipynb' in 'innovations -> trigrams -> classifiers' folder
+6. run 'trigram_<model_name>_classifier.ipynb' in 'innovations -> trigrams -> classifiers' folder
     * generate trigram classification results and predictions for that model
     * eg. running 'trigram_cnb_classifier.ipynb' generates the above for trigram complimentNB model
 
-6. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
+7. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
     * find optimal parameters for xgboost model
 
-7. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
+8. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
     * find best variation of naive bayes model
 
 ## File Structure
@@ -57,6 +58,10 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 
 | deep learning models\
 /* TODO :: insert file structures here */
+
+| LSTM
+|||| biden_tweets_labeled.csv
+|||| model_test_ofeach.ipynb
 
 | ui\
 |||| index.html\
