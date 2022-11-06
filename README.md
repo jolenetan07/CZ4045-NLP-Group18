@@ -1,4 +1,5 @@
-# CZ4045 NLP Group18 Sentiment Analysis Project
+# CZ4045 Group18 Project
+Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To Biden's US Presidency
 
 ## How To Run
 1. run 'preprocess_data.ipynb' in 'datasets' folder
