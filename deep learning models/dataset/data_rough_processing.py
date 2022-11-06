@@ -11,7 +11,7 @@ import re
 import nltk
 
 
-def get_processed_df(data_path='LSTM_baseline/biden_tweets_clean.csv', include_polarity=False):
+def get_processed_df(data_path='dataset/biden_tweets_clean.csv', include_polarity=False):
     nltk.download("stopwords")
     nltk.download("punkt")
     nltk.download("vader_lexicon")
@@ -36,7 +36,7 @@ def get_processed_df(data_path='LSTM_baseline/biden_tweets_clean.csv', include_p
 
     use_csv_col_as_idx = False
     # data_path = "biden_tweets_labeled.csv"
-    # data_path = "LSTM_baseline/biden_tweets_clean.csv"
+    # data_path = "dataset/biden_tweets_clean.csv"
     # columns_to_read = [text_col_name, subjectivity_label_name, polarity_label_name]
     columns_to_read = [text_col_name, polarity_label_name]
 
@@ -165,4 +165,4 @@ def get_processed_df(data_path='LSTM_baseline/biden_tweets_clean.csv', include_p
 
 
 if __name__ == '__main__': 
-    df = get_processed_df('LSTM_baseline/biden_tweets_labeled.csv',include_polarity=True)
+    df = get_processed_df('dataset/biden_tweets_labeled.csv',include_polarity=True)

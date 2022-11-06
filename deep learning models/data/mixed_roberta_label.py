@@ -9,7 +9,7 @@ def onehot(x, c):
     return np.eye(c, dtype=int)[x.reshape(-1)]
 
 
-def get_dataloaders(batch_size, data_path='LSTM_baseline/biden_tweets_manually_labeled_roberta_labeled.csv'):
+def get_dataloaders(batch_size, data_path='dataset/biden_tweets_manually_labeled_roberta_labeled.csv'):
     df = pd.read_csv(data_path)
 
     tokenized_col_name = "Tokenized"

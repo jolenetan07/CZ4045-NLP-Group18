@@ -32,7 +32,7 @@ dataset: "mixed_roberta_label"
 batch_size: 16
 test_batch_size: 16
 
-#data_dir: "./LSTM_baseline"
+#data_dir: "./dataset"
 #data_fraction: 1.0
 
 

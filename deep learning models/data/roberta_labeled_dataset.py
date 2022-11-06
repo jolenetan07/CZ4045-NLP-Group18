@@ -4,7 +4,7 @@ import torch
 from torch.utils.data import DataLoader, TensorDataset
 
 
-def get_dataloaders(batch_size, data_path='LSTM_baseline/biden_tweets_processed_roberta_labeled.csv'):
+def get_dataloaders(batch_size, data_path='dataset/biden_tweets_processed_roberta_labeled.csv'):
     df = pd.read_csv(data_path)
 
     tokenized_col_name = "Tokenized"

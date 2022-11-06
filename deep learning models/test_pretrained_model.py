@@ -6,7 +6,7 @@ from torch import nn
 import torch
 
 # %%
-df = pd.read_csv(('LSTM_baseline/biden_tweets_labeled.csv'))
+df = pd.read_csv(('dataset/biden_tweets_labeled.csv'))
 df.drop(columns=['Unnamed: 0'], inplace=True)
 subjectivity = df['subjectivity'].to_numpy()
 # 0:neg, 1:pos, 2:neutral
