@@ -157,15 +157,18 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 * '<model>_results_full.csv : append predicted polarity by <model> classifier to full dataset
 * '<model>_results_test_labeled.csv : append predicted polarity by <model> classifier to labeled test dataset
 
-*** deep learning folder ***\
+*** deep learning folder ***
+#### long short-term memory (lstm folder)
+* 'model_test_ofeach.ipynb.ipynb' : python script for sentiment analysis with LSTM classifier
+
+#### DAN & roBERTa-DAN (dan & roberta-dan folder)
 * The models are implemented inside "models" folder. The hyperparameters and experiment setup is under the configs folder.
 
-#### The Simple deep average network (DAN)
+* DAN
 ```shell
 python train.py --config configs/dan.yml
 ```
-
-#### Transfer learning with DAN
+* Transfer learning with DAN
 ##### Source domain:  DAN running RoBERTa labeled dataset (near 20000 records)
 We use the pretrained roBERTa model to label the dataset with nearly 20000 tweets on our topic, then we train DAN on this large
 dataset,  to let our DAN model learn the generic sentiment analysis task.
@@ -177,8 +180,7 @@ python train.py --config configs/pretrain.yml
 python train.py --config configs/transfer.yml
 ```
 
-#### Our Novelty: roBERTa-DAN
-
+* roBERTa-DAN
 ```shell
 python train.py --config configs/robertadan.yml
 ```
