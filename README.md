@@ -15,7 +15,7 @@ dataset,  to let our DAN model learn the generic sentiment analysis task.
 ```shell
 python train.py --config configs/pretrain.yml
 ```
-
+### Target domain: 1700 manually labeled dataset
 ```shell
 python train.py --config configs/transfer.yml
 ```
@@ -23,6 +23,6 @@ python train.py --config configs/transfer.yml
 ## Our Novelty: roBERTa-DAN
 
 ```shell
-python train.py --config configs/transfer.yml
+python train.py --config configs/robertadan.yml
 ```
 
