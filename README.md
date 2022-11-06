@@ -8,7 +8,9 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 2. run '<model_name>_classifier.ipynb' in 'classifiers' folder
     * generate classification results and predictions for that model
     * eg. running 'xgb_classifier.ipynb' generates the above for xgboost model 
-3. run 'model_test_ofeach.ipynb' for LSTM. it is a closure under that directory. We are sorry that this part is somehow badly refactored as this is independently developed. Also for LSTM result is generated on the fly.
+
+3. run 'model_test_ofeach.ipynb' in 'deep learning models -> lstm' folder 
+    * generate classification results for lstm model
 
 4. run 'index.html' in 'ui' folder
     * access point to the ui classification dashboard 
@@ -57,7 +59,8 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 |||||||| cnb_results_test_labeled.csv
 
 | deep learning models\
-/* TODO :: insert file structures here */
+|||| dan & roberta-dan\
+|||| lstm\
 
 | LSTM\
 |||| biden_tweets_labeled.csv\
