@@ -114,25 +114,6 @@ def parse_args():
         "--warmup-lr", type=float, default=0.1, help="warmup learning rate"
     )
 
-    # # Evaluate
-    # parser.add_argument(
-    #     "--evaluate", action="store_true", default=False, help="Evaluate model"
-    # )
-
-    # # Restart
-    # parser.add_argument(
-    #     "--start-epoch",
-    #     type=int,
-    #     default=0,
-    #     help="manual start epoch (useful in restarts)",
-    # )
-    # parser.add_argument(
-    #     "--resume",
-    #     type=str,
-    #     default="",
-    #     help="path to latest checkpoint (default:None)",
-    # )
-
     # Additional
     parser.add_argument(
         "--gpu", type=str, default="0", help="Comma separated list of GPU ids"
@@ -168,12 +149,5 @@ def parse_args():
                         help="Freeze source model",
                         default=True)
 
-
-    # parser.add_argument(
-    #     "--schedule_length",
-    #     type=int,
-    #     default=0,
-    #     help="Number of epochs to schedule the training epsilon.",
-    # )
 
     return parser.parse_args()

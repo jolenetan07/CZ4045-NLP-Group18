@@ -1,21 +1,28 @@
-# CZ4045-NLP-Group18
+# Deep Learning Models
 
-## Dataset Info
-* biden_tweets_raw.csv
-    - raw data obtained using snscrape to crawl tweets
+The models are implemented inside "models" folder. The hyperparameters and experiment setup is under the configs folder.
+Experiments:
 
-* biden_tweets_clean.csv (run clean_data.ipynb)
-    - initial cleaning of data
-    - remove non-English tweets
-    - remove duplicate tweets
-    - drop all columns except tweet text
+## The Simple deep average network (DAN)
+```shell
+python train.py --config configs/dan.yml
+```
 
-* biden_tweets_labeled.csv
-    - manually labeled 10% of tweets from biden_tweets_clean.csv (5% from top, 5% from bottom)
-    - to be used as training and/or evaluation set 
-    - subjectivity - 0: neutral, 1: opinionated
-    - polarity - 0: negative, 1: positive, 2: negative
+## Transfer learning with DAN
+### Source domain:  DAN running RoBERTa labeled dataset (near 20000 records)
+We use the pretrained roBERTa model to label the dataset with nearly 20000 tweets on our topic, then we train DAN on this large
+dataset,  to let our DAN model learn the generic sentiment analysis task.
+```shell
+python train.py --config configs/pretrain.yml
+```
 
-* biden_tweets_processed.csv (run preprocess_data.ipynb)
-    - final cleaning of data
-    - preprocess text data using various techniques
+```shell
+python train.py --config configs/transfer.yml
+```
+
+## Our Novelty: roBERTa-DAN
+
+```shell
+python train.py --config configs/transfer.yml
+```
+
