@@ -162,16 +162,17 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 * 'model_test_ofeach.ipynb.ipynb' : python script for sentiment analysis with LSTM classifier
 
 #### DAN & roBERTa-DAN (dan & roberta-dan folder)
-* The models are implemented inside "models" folder. The hyperparameters and experiment setup is under the configs folder.
+* models implemented are located in 'models' folder
+* hyperparameters and experiment setup are located in  'configs' folder
 
 * DAN
 ```shell
 python train.py --config configs/dan.yml
 ```
 * Transfer learning with DAN
-##### Source domain:  DAN running RoBERTa labeled dataset (near 20000 records)
-We use the pretrained roBERTa model to label the dataset with nearly 20000 tweets on our topic, then we train DAN on this large
-dataset,  to let our DAN model learn the generic sentiment analysis task.
+##### Source domain:  DAN running RoBERTa labeled dataset 
+1. used pretrained roBERTa model to label the full dataset 
+2. train DAN on this full labeled dataset, letting our DAN model learn the context of our task
 ```shell
 python train.py --config configs/pretrain.yml
 ```
