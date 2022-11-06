@@ -12,21 +12,27 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 3. run 'model_test_ofeach.ipynb' in 'deep learning models -> lstm' folder 
     * generate classification results for lstm model
 
-4. run 'index.html' in 'ui' folder
+4. run 'python train.py --config configs/dan.yml' in 'deep learning models -> dan & roberta-dan' folder
+    * generate classification results for dan model
+
+5. run 'python train.py --config configs/robertadan.yml' in 'deep learning models -> dan & roberta-dan' folder
+    * generate classification results for roberta-dan model
+
+6. run 'index.html' in 'ui' folder
     * access point to the ui classification dashboard 
 
-5. run 'bigram_<model_name>_classifier.ipynb' in 'innovations -> bigrams -> classifiers' folder
+7. run 'bigram_<model_name>_classifier.ipynb' in 'innovations -> bigrams -> classifiers' folder
     * generate bigram classification results and predictions for that model
     * eg. running 'bigram_lsvc_classifier.ipynb' generates the above for bigram linearSVC model
 
-6. run 'trigram_<model_name>_classifier.ipynb' in 'innovations -> trigrams -> classifiers' folder
+8. run 'trigram_<model_name>_classifier.ipynb' in 'innovations -> trigrams -> classifiers' folder
     * generate trigram classification results and predictions for that model
     * eg. running 'trigram_cnb_classifier.ipynb' generates the above for trigram complimentNB model
 
-7. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
+9. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
     * find optimal parameters for xgboost model
 
-8. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
+10. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
     * find best variation of naive bayes model
 
 ## File Structure
@@ -152,7 +158,30 @@ Repo of CZ4045 NLP Group18 Project on Twitter Sentiment Analysis On Reactions To
 * '<model>_results_test_labeled.csv : append predicted polarity by <model> classifier to labeled test dataset
 
 *** deep learning folder ***\
-/* TODO :: insert file descriptions here */
+* The models are implemented inside "models" folder. The hyperparameters and experiment setup is under the configs folder.
+
+#### The Simple deep average network (DAN)
+```shell
+python train.py --config configs/dan.yml
+```
+
+#### Transfer learning with DAN
+##### Source domain:  DAN running RoBERTa labeled dataset (near 20000 records)
+We use the pretrained roBERTa model to label the dataset with nearly 20000 tweets on our topic, then we train DAN on this large
+dataset,  to let our DAN model learn the generic sentiment analysis task.
+```shell
+python train.py --config configs/pretrain.yml
+```
+##### Target domain: 1700 manually labeled dataset
+```shell
+python train.py --config configs/transfer.yml
+```
+
+#### Our Novelty: roBERTa-DAN
+
+```shell
+python train.py --config configs/robertadan.yml
+```
 
 ### Classification Dashboard (UI)
 *** ui folder ***
