@@ -10,14 +10,14 @@ text_col_name = "Tweet Text"
 
 use_csv_col_as_idx = False
 
-tweets_csv = pd.read_csv("./dataset/biden_tweet_text.csv")
+tweets_csv = pd.read_csv("LSTM_baseline/biden_tweet_text.csv")
 # if tweets_csv.columns[0] == "Unnamed: 0":
 if use_csv_col_as_idx:
     print(f"first column as index, reading csv")
-    tweets_csv = pd.read_csv("./dataset/biden_tweet_text.csv", index_col=[0])
+    tweets_csv = pd.read_csv("LSTM_baseline/biden_tweet_text.csv", index_col=[0])
 else:
     print(f"first column is named, fall back to specify used_cols")
-    tweets_csv = pd.read_csv("./dataset/biden_tweet_text.csv", usecols=["Tweet Text", "Sentiment"])
+    tweets_csv = pd.read_csv("LSTM_baseline/biden_tweet_text.csv", usecols=["Tweet Text", "Sentiment"])
 
 # print(tweets_csv.columns)
 # for i in range(30):

@@ -55,7 +55,7 @@ def parse_args():
     # Data
     # TODO
     parser.add_argument(
-        "--dataset",
+        "--LSTM_baseline",
         type=str,
         # choices=("",),
         help="Dataset for training and eval"
@@ -78,7 +78,7 @@ def parse_args():
     )
 
     # parser.add_argument(
-    #     "--data-dir", type=str, default="./dataset", help="path to datasets"
+    #     "--data-dir", type=str, default="./LSTM_baseline", help="path to datasets"
     # )
 
     # parser.add_argument(

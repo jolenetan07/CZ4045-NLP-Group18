@@ -14,7 +14,7 @@ import nltk
 overall_tokens = []
 
 
-def get_dataloaders(batch_size, data_path="dataset/biden_tweets_labeled.csv"):
+def get_dataloaders(batch_size, data_path="LSTM_baseline/biden_tweets_labeled.csv"):
     """
     Around 1000 data records, that is manually labeled
     """
