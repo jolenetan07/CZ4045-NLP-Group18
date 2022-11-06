@@ -36,7 +36,7 @@ def train(
     end = time.time()
 
     for i, data in enumerate(train_loader):
-        input_data, target = data[0].to(device), data[1].to(device)
+        input_data, target = data[0], data[1]
 
         # basic properties of training
         if i == 0:
@@ -46,6 +46,8 @@ def train(
             )
 
         input_data = input_data.type(torch.LongTensor)
+        input_data = input_data.to(device)
+        target = target.to(device)
         output = model(input_data)
         loss = criterion(output, target)
 

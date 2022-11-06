@@ -68,7 +68,7 @@ def get_device(args):
     """
     get device for training
     """
-    use_cuda = not args.no_cuda and torch.cuda.is_available()
+    use_cuda = (not args.no_cuda) and torch.cuda.is_available()
     gpu_list = [int(i) for i in args.gpu.strip().split(",")]
     if use_cuda: print("Use Cuda")
     else: print("use cpu")
@@ -172,7 +172,7 @@ def main():
     # Test model
     test_acc, test_precision, test_recall, test_f1 = val(model, device, test_loader, criterion, args, writer,
                                                          epoch="test")
-    print(f"Training finished, test_acc: {test_acc}, test_precision: {test_precision}, test_recall: {test_recall}, "
+    print(f"Training finished, test_acc: {test_acc:.2f}, test_precision: {test_precision:.2f}, test_recall: {test_recall}, "
           f"test_f1: {test_f1}") 
 
 
