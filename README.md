@@ -1,5 +1,30 @@
 # CZ4045 NLP Group18 Sentiment Analysis Project
 
+## How To Run
+1. run 'preprocess_data.ipynb' in 'datasets' folder
+    * generate processed text data, token frequencies and word cloud 
+
+2. run '<model_name>_classifier.ipynb' in 'classifiers' folder
+    * generate classification results and predictions for that model
+    * eg. running 'xgb_classifier.ipynb' generates the above for xgboost model 
+
+3. run 'index.html' in 'ui' folder
+    * access point to the ui classification dashboard 
+
+4. run 'bigram_<model_name>_classifier.ipynb' in 'innovations -> bigrams -> classifiers' folder
+    * generate bigram classification results and predictions for that model
+    * eg. running 'bigram_lsvc_classifier.ipynb' generates the above for bigram linearSVC model
+
+5. run 'trigram_<model_name>_classifier.ipynb' in 'innovations -> trigrams -> classifiers' folder
+    * generate trigram classification results and predictions for that model
+    * eg. running 'trigram_cnb_classifier.ipynb' generates the above for trigram complimentNB model
+
+6. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
+    * find optimal parameters for xgboost model
+
+7. run 'tune_xgb_classifier' in 'innovations -> tune-xgboost' folder
+    * find best variation of naive bayes model
+
 ## File Structure
 | datasets\
 |||| crawl_data.ipynb\
@@ -70,18 +95,18 @@
 |||||||||||||||||||| trigram_cnb_results_full.csv\
 |||||||||||||||||||| trigram_cnb_results_test_labeled.csv
 
-
-## Data Collection 
+## File Descriptions
+### Data Collection 
 *** datasets folder ***
 * 'crawl_data.ipynb' : python script to crawl tweet text data using snscrape
 
 
-## Data Preprocessing
+### Data Preprocessing
 *** datasets folder ***
 * 'preprocess_data.ipynb' : python script to clean and preprocess data using various techniques & perform exploratory data analysis on both full and labeled datasets 
 
 
-## Dataset
+### Dataset
 *** datasets folder ***
 * 'biden_tweets_raw.csv' : tweet data crawled using snscrape 
 
@@ -96,21 +121,21 @@
 * 'biden_tweets_labeled_test.csv' : extract 20% preprocessed labeled tweet text data  to use as test dataset for models
 
 
-## Sentiment Analysis (Classification)
+### Sentiment Analysis (Classification)
 *** classifiers folder ***
-### vadersentiments
+#### vadersentiments
 * 'vader_classifier.ipynb' : python script for sentiment analysis with vader classifier
 
-### textblob
+#### textblob
 * 'textblob_classifier.ipynb' : python script for sentiment analysis with textblob classifier
 
-### linear support vector 
+#### linear support vector 
 * 'lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier
 
-### xgboost
+#### xgboost
 * 'xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier
 
-### complement naive bayes
+#### complement naive bayes
 * 'cnb_classifier.ipynb' : python script for sentiment analysis with ComplementNB classifier
 
 *** results folder ***
@@ -120,32 +145,32 @@
 *** deep learning folder ***\
 /* TODO :: insert file descriptions here */
 
-## Classification Dashboard (UI)
+### Classification Dashboard (UI)
 *** ui folder ***
 * 'index.html'
 * 'styles.css'
 * 'script.js'
 
 
-## Innovations
+### Innovations
 *** innovations folder ***
-### xgboost hyperparameters tuning
+#### xgboost hyperparameters tuning
 *** tune-xgboost folder ***
 * 'tune_xgb_classifier.ipynb' : python script to find best hyperparameters for sentiment analysis with XGBoost classifier
 
-### choosing best variation of naive bayes
+#### choosing best variation of naive bayes
 *** choose-naivebayes folder ***
 * 'choose_naivebayes_classifier.ipynb' : python script to find best variation of naive bayes classifier for sentiment analysis 
 
-### bigram on supervised models 
+#### bigram on supervised models 
 *** bigrams -> classifier folder ***
-#### linear support vector 
+##### linear support vector 
 * 'bigram_lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier with bi-gram
 
-#### xgboost
+##### xgboost
 * 'bigram_xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier with bi-gram
 
-#### complement naive bayes
+##### complement naive bayes
 * 'bigram_cnb_classifier.ipynb' : python script for sentiment analysis with ComplementNB classifier with bi-gram
 
 
@@ -153,15 +178,15 @@
 * 'bigram_<model>_results_full.csv : append predicted polarity by <model> classifier with bi-gram to full dataset
 * 'bigram_<model>_results_test_labeled.csv : append predicted polarity by <model> classifier wwith bi-gram to labeled test dataset
 
-### trigram on supervised models
+#### trigram on supervised models
 *** trigrams -> classifier folder ***
-#### linear support vector 
+##### linear support vector 
 * 'trigram_lsvc_classifier.ipynb' : python script for sentiment analysis with linearSVC classifier with tri-gram
 
-#### xgboost
+##### xgboost
 * 'trigram_xgb_classifier.ipynb' : python script for sentiment analysis with XGBoost classifier with tri-gram
 
-#### complement naive bayes
+##### complement naive bayes
 * 'trigram_cnb_classifier.ipynb' : python script for sentiment analysis with ComplementNB classifier with tri-gram
 
 *** results folder ***
